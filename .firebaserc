@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mindful-4c5bd": {
+      "hosting": {
+        "iot-dashboard": [
+          "mindful-4c5bd"
+        ]
+      }
+    }
+  }
+}
