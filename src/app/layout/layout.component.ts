@@ -1,9 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-<<<<<<< HEAD
 import { AuthenticationService } from '../auth.service';
-=======
-import { AuthenticationService } from '../auth.service';
->>>>>>> merge
 import { MatAccordion } from '@angular/material/expansion';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -40,11 +36,7 @@ export class LayoutComponent implements OnInit {
   isChargeBack: string;
   token: any;
 
-<<<<<<< HEAD
   constructor(private AuthenticationService: AuthenticationService, public dialog: MatDialog,) {
-=======
-  constructor(private AuthenticationService: AuthenticationService, public dialog: MatDialog,) {
->>>>>>> merge
 
   }
   ngOnInit(): void {

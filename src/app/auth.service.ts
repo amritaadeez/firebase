@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import firebase from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 
@@ -50,20 +49,3 @@ this.angularFireAuth
 }
  
 }
-=======
-import { BehaviorSubject } from 'rxjs';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthenticationService {
-  redirectUrl: string;
-  resetUrl = new BehaviorSubject < any > ('');
-  iotDataGraph = new BehaviorSubject < any > ('');
-  
-  constructor() { 
-
- 
-  }
-}
->>>>>>> merge

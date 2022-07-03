@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth.guard';
 import { LayoutComponent } from '../layout/layout.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
-<<<<<<< HEAD
-=======
 import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
 import { CategoryDetailComponent } from './categories/category-detail/category-detail.component';
 import { CreateNewCategoryComponent } from './categories/create-new-category/create-new-category.component';
@@ -13,7 +11,6 @@ import { PaymentComponent } from './payment/payment.component';
 import { CreateNewProgramComponent } from './programs/create-new-program/create-new-program.component';
 import { ProgramDetailsComponent } from './programs/program-details/program-details.component';
 import { ProgramsListComponent } from './programs/programs-list/programs-list.component';
->>>>>>> merge
 
 
 
@@ -29,8 +26,6 @@ const routes: Routes = [{
         module => module.HomeModule
       )
     },
-<<<<<<< HEAD
-=======
     {
       path: 'meditation',
       loadChildren: () => import(`./meditation/meditation.module`).then(
@@ -69,7 +64,6 @@ const routes: Routes = [{
       path: 'intro-question',
       component: IntroQuestionComponent
     },
->>>>>>> merge
 
 
     {

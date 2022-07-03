@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
-<<<<<<< HEAD
-import { ProfileComponent } from './profile/profile.component';
-=======
-
->>>>>>> merge
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -21,14 +16,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import {MatTabsModule} from '@angular/material/tabs';
-<<<<<<< HEAD
-
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-@NgModule({
-  declarations: [
-    ProfileComponent,
-=======
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
@@ -48,15 +35,12 @@ import { IntroQuestionComponent } from './intro-question/intro-question.componen
 @NgModule({
   declarations: [
 
->>>>>>> merge
     NavbarComponent,
     SidebarComponent,
     ResetPasswordComponent,
     LayoutComponent,
     PageNotFoundComponent,
     AnalyticsComponent,
-<<<<<<< HEAD
-=======
     PaymentComponent,
     CategoriesListComponent,
     CreateNewCategoryComponent,
@@ -66,7 +50,6 @@ import { IntroQuestionComponent } from './intro-question/intro-question.componen
     ProgramDetailsComponent,
     IntroQuestionComponent,
 
->>>>>>> merge
   ],
   imports: [
     CommonModule,
@@ -78,14 +61,10 @@ import { IntroQuestionComponent } from './intro-question/intro-question.componen
     MatSidenavModule,
     MatTooltipModule,
     Ng2SearchPipeModule,
-<<<<<<< HEAD
-    MatTabsModule
-=======
     MatTabsModule,
     MatFormFieldModule,
     MatSelectModule,
     NgxPaginationModule
->>>>>>> merge
   ]
 })
 export class DashboardModule { }

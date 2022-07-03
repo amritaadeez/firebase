@@ -7,11 +7,7 @@ import {
 } from 'src/app/apiservice.service';
 import * as moment from 'moment';
 import {
-<<<<<<< HEAD
   AuthenticationService
-=======
-  AuthenticationService
->>>>>>> merge
 } from 'src/app/auth.service';
 import {
   Router
@@ -86,11 +82,7 @@ export class AnalyticsComponent implements OnInit {
   weekGraphTwo: any;
   weekGraphThree: any;
 
-<<<<<<< HEAD
   constructor(private apiService: ApiserviceService, private AuthenticationService: AuthenticationService, private router: Router) {
-=======
-  constructor(private apiService: ApiserviceService, private AuthenticationService: AuthenticationService, private router: Router) {
->>>>>>> merge
     this.view = [innerWidth / 1.35, 520];
   }
 
@@ -112,11 +104,7 @@ export class AnalyticsComponent implements OnInit {
 
   ngOnInit(): void {
     this.overlapLoader = true
-<<<<<<< HEAD
    /*  this.AuthenticationService.iotDataGraph.subscribe(
-=======
-    this.AuthenticationService.iotDataGraph.subscribe(
->>>>>>> merge
       data => {
 
         if (!data) {
@@ -125,11 +113,7 @@ export class AnalyticsComponent implements OnInit {
           this.infoGraph = data
         }
       }
-<<<<<<< HEAD
     ) */
-=======
-    )
->>>>>>> merge
 
     this.showGraphData()
 

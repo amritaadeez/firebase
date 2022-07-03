@@ -13,53 +13,30 @@ import {
 import {
   Router
 } from '@angular/router';
-<<<<<<< HEAD
-
-=======
->>>>>>> merge
 import {
   ApiserviceService
 } from 'src/app/apiservice.service';
 import {
-<<<<<<< HEAD
   AuthenticationService
-=======
-  AuthenticationService
->>>>>>> merge
 } from 'src/app/auth.service';
 import {
   MatSnackBar
 } from '@angular/material/snack-bar';
-<<<<<<< HEAD
-
-=======
->>>>>>> merge
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-<<<<<<< HEAD
-
-=======
->>>>>>> merge
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   spinner: boolean = false;
   submitted: boolean;
   durationInSeconds: number = 3;
-<<<<<<< HEAD
   fieldTextType: any;
   email: string;
   password: string;
 
   constructor(private apiService: ApiserviceService, public authenticationService: AuthenticationService, private _snackBar: MatSnackBar,
-=======
-  password: string;
-  fieldTextType: any;
-
-  constructor(private apiService: ApiserviceService, private AuthenticationService: AuthenticationService, private _snackBar: MatSnackBar,
->>>>>>> merge
     private formBuilder: FormBuilder,
     public router: Router, public dialog: MatDialog) {
 
@@ -90,7 +67,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.password = 'password';
   }
-<<<<<<< HEAD
   signUp() {
     /* this.authenticationService.SignUp(this.email, this.password);
     this.email = ''; 
@@ -147,42 +123,6 @@ export class LoginComponent implements OnInit {
   //     );
   //   }
   // }
-=======
-
-  login(data: any) {
-    this.router.navigate(['/dashboard/home/main']);
-    // this.spinner = true;
-    // this.submitted = true;
-    // if (this.loginForm.invalid) {
-    //   this.spinner = false;
-    //   return;
-    // } else {
-    //   this.apiService.login(data).subscribe(
-    //     (response: any) => {
-    //       this.spinner = false
-
-    //       this._snackBar.open(response.message, "Thanks", {
-    //         duration: 3000
-    //       });
-    //       var token = response.token
-    //       var email = response.data.email_address
-    //       var id = response.data.id
-    //       localStorage.setItem("email", email)
-    //       localStorage.setItem("id", id)
-    //       localStorage.setItem("authToken", token)
-    //       this.router.navigate(['/dashboard/home/main'])
-    //     }, (error: any) => {
-    //       this.spinner = false
-    //       if (error.status == 0) {
-    //       this._snackBar.open("Internet Connection Issue", "Cancel");
-    //       } else {
-    //       this._snackBar.open(error.error.message, "Cancel");
-    //       }
-    //     }
-    //   );
-    // }
-  }
->>>>>>> merge
 
 
   toggleFieldTextType() {

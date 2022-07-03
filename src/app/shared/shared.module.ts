@@ -35,11 +35,7 @@ import {
   AuthGuard
 } from '../auth.guard';
 import {
-<<<<<<< HEAD
   AuthenticationService
-=======
-  AuthenticationService
->>>>>>> merge
 } from '../auth.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {
@@ -75,11 +71,7 @@ import { MatMenuModule } from '@angular/material/menu';
   ],
   providers: [
     ApiserviceService,
-<<<<<<< HEAD
     AuthenticationService,
-=======
-    AuthenticationService,
->>>>>>> merge
     AuthGuard,
     // {
     //   provide: HTTP_INTERCEPTORS,
