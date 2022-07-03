@@ -14,7 +14,7 @@ background-color: #f2f2f2;
   color: #0e1726 !important;
   font-size: 0.875rem !important;
   letter-spacing: 0.0312rem !important;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 *::-webkit-scrollbar {
@@ -38,6 +38,8 @@ background-color: #f2f2f2;
   color: #0e1726 !important;
   border: 1px solid #0e1726;
 }
+
+
 
 .field-wrapper {
   width: 100%;
@@ -132,3 +134,18 @@ ngx-charts-legend > div > div > ul {
   border-radius: 5px !important;
   cursor: default;
 } 
+
+.mat-form-field-underline {
+  display: none !important;
+}
+.mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+  transform: translateY(-50%);
+  padding: 1em 0 0 !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0em 0 0.75em 0 !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 4px 4px 0 0;
+  padding: 0em 0.75em 0 0.75em !important;
+}
