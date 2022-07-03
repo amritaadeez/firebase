@@ -7,8 +7,14 @@
     height: 100vh;
     position: fixed;">
     <div class="bottom-logo">
+<<<<<<< HEAD
       <img src="assets/logo.png" style="height: 7vh; margin: 1em;
           padding: 0.5em;">
+=======
+      <!-- <img src="assets/logo.png" style="height: 7vh; margin: 1em;
+          padding: 0.5em;"> -->
+          <h5>Logo Here</h5>
+>>>>>>> merge
     </div>
     <div class=" column-first laptop animate__animated animate__fadeInLeft" style="height: 80vh; padding: 1em 0 0 0;">
       <ul id="myGroup">
@@ -30,6 +36,7 @@
   </div>
   <mat-drawer-container class="example-container" autosize [ngClass]="{
         'padding-left': !showFiller}">
+<<<<<<< HEAD
     <button type="button" class="web " mat-icon-button (click)="draw.toggle()" (click)="toggles()">
       <i class=" fas fa-bars"></i>
     </button>
@@ -78,6 +85,57 @@
                     class="fas fa-user" style="margin-right: 1em;"></i> Profile </span>
               </div>
             </li>
+=======
+    <!-- <button type="button" class="web " mat-icon-button (click)="draw.toggle()" (click)="toggles()">
+      <i class=" fas fa-bars"></i>
+    </button> -->
+    <mat-drawer #draw class="example-sidenav web" mode="side" opened>
+      <aside class=" main-sidebar laptops" id="sidebar" [hidden]="hideMobileMenu" [ngClass]="{'hidden': hideSideNav }">
+        <div class=" column-first laptop">
+          <div class="bottom-logo fake-logo">
+            <!-- <img src="assets/iot_logo-1.png" style="height: 7vh; margin: 1em;
+              padding: 0.5em;"> -->
+              <h3>Logo Here</h3>
+          </div>
+          <ul id="myGroup">
+            <li routerLinkActive="active" routerLink="/dashboard/home/main" class="list">
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rla="routerLinkActive">
+                <img src="{{ rla.isActive ? 'assets/sidebar/user.svg' : 'assets/sidebar/user-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> User </span>
+              </div>
+            </li>
+
+            <li routerLinkActive="active" routerLink="/dashboard/payment-setup" class="list">
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlaw="routerLinkActive">
+                <img src="{{ rlaw.isActive ? 'assets/sidebar/wallet.svg' : 'assets/sidebar/wallet-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Payment Setup </span>
+              </div>
+            </li>
+            <li routerLinkActive="active" routerLink="/dashboard/meditation/meditation-list" class="list">
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlam="routerLinkActive">
+                <img src="{{ rlam.isActive ? 'assets/sidebar/meditation.svg' : 'assets/sidebar/meditation-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Meditations </span>
+              </div>
+            </li>
+            <li routerLinkActive="active" class="list" routerLink="/dashboard/categories">
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlac="routerLinkActive">
+                <img src="{{ rlac.isActive ? 'assets/sidebar/categories.svg' : 'assets/sidebar/categories-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Categories </span>
+              </div>
+            </li>
+            <li routerLinkActive="active" class="list" class="list" routerLink="/dashboard/programs">
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlap="routerLinkActive">
+                <img src="{{ rlap.isActive ? 'assets/sidebar/programs.svg' : 'assets/sidebar/programs-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Programs </span>
+              </div>
+            </li>
+
+            <li routerLinkActive="active" class="list" routerLink="/dashboard/intro-question">
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlai="routerLinkActive">
+                <img src="{{ rlai.isActive ? 'assets/sidebar/intro.svg' : 'assets/sidebar/intro-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Intro Questions </span>
+              </div>
+            </li>
+            <!-- <li routerLinkActive="active" routerLink="/dashboard/home/profile" class="list">
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active"><i
+                    class="fas fa-user" style="margin-right: 1em;"></i> Profile </span>
+              </div>
+            </li> -->
+>>>>>>> merge
 
           </ul>
 

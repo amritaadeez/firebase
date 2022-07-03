@@ -1,0 +1,76 @@
+<div class="main-content">
+
+
+
+
+    <div class="row data-row">
+      <div class="col-12 cl-lg-12 col-xl-12 col-md-12" style="height: 90vh; overflow: auto; padding: 5vh 3vh;">
+        <div class="row">
+          
+          <div class="col-12 ">
+            <h4> Programs </h4>
+            <div class="card component-card_9 zindex" >
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-4" style="padding-left: 0;">
+                    <div class="search-div">
+                      <input class="form-control search-form" placeholder="Search Categories"> 
+                      <i class="fas fa-search"></i>
+    
+                    </div>
+                   
+                  </div> 
+                  <div class="offset-md-4 col-4">
+                    <button class="btn btn-create" routerLink="/dashboard/programs-new-category">Create New</button>
+                  </div>
+                </div>
+                <hr>
+                <div class="table-div">
+                  <table class="table" >
+                    <thead>
+                      <tr >
+                        <th scope="col">S.no</th>
+                        <th scope="col">Program Image</th>
+                        <th scope="col">Program Name</th>
+                        <th scope="col">No. of Meditations</th>
+                        
+                       
+    
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">
+                        <td>
+                          {{item.firstName}}
+                        </td>
+                        <td><img [src]="item.imageurl" alt="" class="img-fluid" routerLink="/dashboard/program-detail"></td>
+                        <td>{{item.userName}}</td>
+                        <td>{{item.email}}</td>
+                        
+                      </tr>
+                    
+                      
+                    </tbody>
+                  </table>
+                  
+                </div>
+               
+                <hr>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+               
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  
+    </div>
+  
+  
+  
+  
+  
+  </div>
+  

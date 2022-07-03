@@ -4,7 +4,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ApiserviceService } from 'src/app/apiservice.service';
+<<<<<<< HEAD
 import { AuthenticationService } from 'src/app/auth.service';
+=======
+import { AuthenticationService } from 'src/app/auth.service';
+>>>>>>> merge
 
 @Component({
   selector: 'app-forgot-password',
@@ -17,7 +21,11 @@ export class ForgotPasswordComponent implements OnInit {
   submitted: boolean;
   resetLink: any;
 
+<<<<<<< HEAD
   constructor(private apiService: ApiserviceService, private AuthenticationService: AuthenticationService,  private _snackBar: MatSnackBar,
+=======
+  constructor(private apiService: ApiserviceService, private AuthenticationService: AuthenticationService,  private _snackBar: MatSnackBar,
+>>>>>>> merge
     private formBuilder: FormBuilder,
     public router: Router, public dialog: MatDialog) {
 
@@ -57,7 +65,11 @@ export class ForgotPasswordComponent implements OnInit {
             duration: 3000
           });
 
+<<<<<<< HEAD
           //this.AuthenticationService.resetUrl.next(this.resetLink)
+=======
+          this.AuthenticationService.resetUrl.next(this.resetLink)
+>>>>>>> merge
 
           this.router.navigate(['/reset-password'])
         

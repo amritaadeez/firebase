@@ -13,7 +13,11 @@ import {
   Router
 } from '@angular/router';
 import {
+<<<<<<< HEAD
   AuthenticationService
+=======
+  AuthenticationService
+>>>>>>> merge
 } from 'src/app/auth.service';
 
 @Component({
@@ -59,131 +63,243 @@ export class MainDashboardComponent implements OnInit {
   collection = [{
       
       
+<<<<<<< HEAD
           "firstName": "Vikas",
           "lastName": "Pandey",
           "userName": "vikaPaney",
           "email": "vikapandey@eroute.in"
+=======
+          "firstName": "Lorem",
+          "lastName": "Ipsum",
+          "userName": "LoremIpsum",
+          "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
   },
   {
       
       
+<<<<<<< HEAD
     "firstName": "Vikas",
     "lastName": "Pandey",
     "userName": "vikaPaney",
     "email": "vikapandey@eroute.in"
+=======
+    "firstName": "Lorem",
+    "lastName": "Ipsum",
+    "userName": "LoremIpsum",
+    "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 },{
       
       
+<<<<<<< HEAD
   "firstName": "Vikas",
   "lastName": "Pandey",
   "userName": "vikaPaney",
   "email": "vikapandey@eroute.in"
+=======
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
+>>>>>>> merge
 
 }
 
@@ -214,7 +330,11 @@ export class MainDashboardComponent implements OnInit {
   nextDate: number;
   previousDate: number;
   wifi1: boolean = true;
+<<<<<<< HEAD
   constructor(private apiService: ApiserviceService, private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {}
+=======
+  constructor(private apiService: ApiserviceService, private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {}
+>>>>>>> merge
 
   ngOnInit(): void {
 

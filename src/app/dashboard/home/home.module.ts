@@ -10,10 +10,19 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
+<<<<<<< HEAD
 
 @NgModule({
   declarations: [
     MainDashboardComponent
+=======
+import { UserDetailComponent } from './user-detail/user-detail.component';
+
+@NgModule({
+  declarations: [
+    MainDashboardComponent,
+    UserDetailComponent
+>>>>>>> merge
   ],
   imports: [
     CommonModule,

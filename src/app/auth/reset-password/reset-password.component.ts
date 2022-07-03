@@ -4,7 +4,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ApiserviceService } from 'src/app/apiservice.service';
+<<<<<<< HEAD
 import { AuthenticationService } from 'src/app/auth.service';
+=======
+import { AuthenticationService } from 'src/app/auth.service';
+>>>>>>> merge
 
 @Component({
   selector: 'app-reset-password',
@@ -17,16 +21,28 @@ export class ResetPasswordComponent implements OnInit {
   submitted: boolean;
   resetLink: any;
 
+<<<<<<< HEAD
   constructor(private apiService: ApiserviceService, private AuthenticationService: AuthenticationService,  private _snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
     public router: Router, public dialog: MatDialog) {
 
       /* this.AuthenticationService.resetUrl.subscribe(
+=======
+  constructor(private apiService: ApiserviceService, private AuthenticationService: AuthenticationService,  private _snackBar: MatSnackBar,
+    private formBuilder: FormBuilder,
+    public router: Router, public dialog: MatDialog) {
+
+      this.AuthenticationService.resetUrl.subscribe(
+>>>>>>> merge
         (data: any) => {
           
           this.resetLink = data
         }
+<<<<<<< HEAD
       ); */
+=======
+      );
+>>>>>>> merge
 
     
     this.resetForm = this.formBuilder.group({

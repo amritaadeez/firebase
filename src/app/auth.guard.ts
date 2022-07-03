@@ -2,7 +2,11 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
 import { AuthenticationService } from './auth.service';
+=======
+import { AuthenticationService } from './auth.service';
+>>>>>>> merge
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +16,11 @@ export class AuthGuard implements CanActivate {
   urls: string | null;
 
   constructor(
+<<<<<<< HEAD
     private AuthenticationService: AuthenticationService,
+=======
+    private AuthenticationService: AuthenticationService,
+>>>>>>> merge
     private router: Router,
   ) {
     this.urls = localStorage.getItem('userRole')

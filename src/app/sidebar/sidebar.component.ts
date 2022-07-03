@@ -9,7 +9,11 @@ import {
   ApiserviceService
 } from '../apiservice.service';
 import {
+<<<<<<< HEAD
   AuthenticationService
+=======
+  AuthenticationService
+>>>>>>> merge
 } from '../auth.service';
 import {
   Subscription
@@ -76,7 +80,11 @@ export class SidebarComponent implements OnInit {
   isChargeBack: string;
   constructor(
     private apiService: ApiserviceService,
+<<<<<<< HEAD
     private AuthenticationService: AuthenticationService,
+=======
+    private AuthenticationService: AuthenticationService,
+>>>>>>> merge
     public router: Router,
   ) {
 
