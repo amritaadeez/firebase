@@ -7,8 +7,9 @@
     height: 100vh;
     position: fixed;">
     <div class="bottom-logo">
-      <img src="assets/logo.png" style="height: 7vh; margin: 1em;
-          padding: 0.5em;">
+      <!-- <img src="assets/logo.png" style="height: 7vh; margin: 1em;
+          padding: 0.5em;"> -->
+          <h5>Logo Here</h5>
     </div>
     <div class=" column-first laptop animate__animated animate__fadeInLeft" style="height: 80vh; padding: 1em 0 0 0;">
       <ul id="myGroup">
@@ -30,47 +31,48 @@
   </div>
   <mat-drawer-container class="example-container" autosize [ngClass]="{
         'padding-left': !showFiller}">
-    <button type="button" class="web " mat-icon-button (click)="draw.toggle()" (click)="toggles()">
+    <!-- <button type="button" class="web " mat-icon-button (click)="draw.toggle()" (click)="toggles()">
       <i class=" fas fa-bars"></i>
-    </button>
+    </button> -->
     <mat-drawer #draw class="example-sidenav web" mode="side" opened>
       <aside class=" main-sidebar laptops" id="sidebar" [hidden]="hideMobileMenu" [ngClass]="{'hidden': hideSideNav }">
         <div class=" column-first laptop">
-          <div class="bottom-logo">
-            <img src="assets/iot_logo-1.png" style="height: 7vh; margin: 1em;
-              padding: 0.5em;">
+          <div class="bottom-logo fake-logo">
+            <!-- <img src="assets/iot_logo-1.png" style="height: 7vh; margin: 1em;
+              padding: 0.5em;"> -->
+              <h3>Logo Here</h3>
           </div>
           <ul id="myGroup">
             <li routerLinkActive="active" routerLink="/dashboard/home/main" class="list">
-              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active"><i
-                    class="fas fa-user" style="margin-right: 1em;"></i> User </span>
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rla="routerLinkActive">
+                <img src="{{ rla.isActive ? 'assets/sidebar/user.svg' : 'assets/sidebar/user-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> User </span>
               </div>
             </li>
 
             <li routerLinkActive="active" class="list">
-              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active"><i
-                    class="fas fa-wallet" style="margin-right: 1em;"></i> Payment Setup </span>
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlaw="routerLinkActive">
+                <img src="{{ rlaw.isActive ? 'assets/sidebar/wallet.svg' : 'assets/sidebar/wallet-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Payment Setup </span>
               </div>
             </li>
             <li routerLinkActive="active" class="list">
-              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active"><i
-                    class="fas fa-home" style="margin-right: 1em;"></i> Meditations </span>
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlam="routerLinkActive">
+                <img src="{{ rlam.isActive ? 'assets/sidebar/meditation.svg' : 'assets/sidebar/meditation-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Meditations </span>
               </div>
             </li>
             <li routerLinkActive="active" class="list">
-              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active"><i
-                    class="fas fa-home" style="margin-right: 1em;"></i> Categories </span>
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlac="routerLinkActive">
+                <img src="{{ rlac.isActive ? 'assets/sidebar/categories.svg' : 'assets/sidebar/categories-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Categories </span>
               </div>
             </li>
             <li routerLinkActive="active" class="list">
-              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active"><i
-                    class="fas fa-home" style="margin-right: 1em;"></i> Programs </span>
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlap="routerLinkActive">
+                <img src="{{ rlap.isActive ? 'assets/sidebar/programs.svg' : 'assets/sidebar/programs-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Programs </span>
               </div>
             </li>
 
             <li routerLinkActive="active" class="list">
-              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active"><i
-                    class="fas fa-home" style="margin-right: 1em;"></i> Intro Questions </span>
+              <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlai="routerLinkActive">
+                <img src="{{ rlai.isActive ? 'assets/sidebar/intro.svg' : 'assets/sidebar/intro-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Intro Questions </span>
               </div>
             </li>
             <li routerLinkActive="active" routerLink="/dashboard/home/profile" class="list">

@@ -68,37 +68,37 @@ export class LoginComponent implements OnInit {
   }
 
   login(data: any) {
+    this.router.navigate(['/dashboard/home/main']);
+    // this.spinner = true;
+    // this.submitted = true;
+    // if (this.loginForm.invalid) {
+    //   this.spinner = false;
+    //   return;
+    // } else {
+    //   this.apiService.login(data).subscribe(
+    //     (response: any) => {
+    //       this.spinner = false
 
-    this.spinner = true;
-    this.submitted = true;
-    if (this.loginForm.invalid) {
-      this.spinner = false;
-      return;
-    } else {
-      this.apiService.login(data).subscribe(
-        (response: any) => {
-          this.spinner = false
-
-          this._snackBar.open(response.message, "Thanks", {
-            duration: 3000
-          });
-          var token = response.token
-          var email = response.data.email_address
-          var id = response.data.id
-          localStorage.setItem("email", email)
-          localStorage.setItem("id", id)
-          localStorage.setItem("authToken", token)
-          this.router.navigate(['/dashboard/home/main'])
-        }, (error: any) => {
-          this.spinner = false
-          if (error.status == 0) {
-          this._snackBar.open("Internet Connection Issue", "Cancel");
-          } else {
-          this._snackBar.open(error.error.message, "Cancel");
-          }
-        }
-      );
-    }
+    //       this._snackBar.open(response.message, "Thanks", {
+    //         duration: 3000
+    //       });
+    //       var token = response.token
+    //       var email = response.data.email_address
+    //       var id = response.data.id
+    //       localStorage.setItem("email", email)
+    //       localStorage.setItem("id", id)
+    //       localStorage.setItem("authToken", token)
+    //       this.router.navigate(['/dashboard/home/main'])
+    //     }, (error: any) => {
+    //       this.spinner = false
+    //       if (error.status == 0) {
+    //       this._snackBar.open("Internet Connection Issue", "Cancel");
+    //       } else {
+    //       this._snackBar.open(error.error.message, "Cancel");
+    //       }
+    //     }
+    //   );
+    // }
   }
 
 
