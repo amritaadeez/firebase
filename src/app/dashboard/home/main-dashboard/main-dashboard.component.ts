@@ -59,131 +59,131 @@ export class MainDashboardComponent implements OnInit {
   collection = [{
       
       
-          "firstName": "Vikas",
-          "lastName": "Pandey",
-          "userName": "vikaPaney",
-          "email": "vikapandey@eroute.in"
+          "firstName": "Lorem",
+          "lastName": "Ipsum",
+          "userName": "LoremIpsum",
+          "email": "LoremIpsum@lorem"
 
   },
   {
       
       
-    "firstName": "Vikas",
-    "lastName": "Pandey",
-    "userName": "vikaPaney",
-    "email": "vikapandey@eroute.in"
+    "firstName": "Lorem",
+    "lastName": "Ipsum",
+    "userName": "LoremIpsum",
+    "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 },{
       
       
-  "firstName": "Vikas",
-  "lastName": "Pandey",
-  "userName": "vikaPaney",
-  "email": "vikapandey@eroute.in"
+  "firstName": "Lorem",
+  "lastName": "Ipsum",
+  "userName": "LoremIpsum",
+  "email": "LoremIpsum@lorem"
 
 }
 

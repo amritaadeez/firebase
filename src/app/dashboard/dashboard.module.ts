@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { ProfileComponent } from './profile/profile.component';
+
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -17,18 +17,40 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PaymentComponent } from './payment/payment.component';
+import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
+import { CreateNewCategoryComponent } from './categories/create-new-category/create-new-category.component';
+import { CategoryDetailComponent } from './categories/category-detail/category-detail.component';
+import { ProgramsListComponent } from './programs/programs-list/programs-list.component';
+import { CreateNewProgramComponent } from './programs/create-new-program/create-new-program.component';
+import { ProgramDetailsComponent } from './programs/program-details/program-details.component';
+import { IntroQuestionComponent } from './intro-question/intro-question.component';
+
 
 @NgModule({
   declarations: [
-    ProfileComponent,
+
     NavbarComponent,
     SidebarComponent,
     ResetPasswordComponent,
     LayoutComponent,
     PageNotFoundComponent,
     AnalyticsComponent,
+    PaymentComponent,
+    CategoriesListComponent,
+    CreateNewCategoryComponent,
+    CategoryDetailComponent,
+    ProgramsListComponent,
+    CreateNewProgramComponent,
+    ProgramDetailsComponent,
+    IntroQuestionComponent,
+
   ],
   imports: [
     CommonModule,
@@ -40,7 +62,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatSidenavModule,
     MatTooltipModule,
     Ng2SearchPipeModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    NgxPaginationModule
   ]
 })
 export class DashboardModule { }

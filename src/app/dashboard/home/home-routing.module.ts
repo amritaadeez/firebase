@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/auth.guard';
 import { AnalyticsComponent } from '../analytics/analytics.component';
-import { ProfileComponent } from '../profile/profile.component';
+
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 const routes: Routes = [
   {
@@ -11,16 +12,17 @@ const routes: Routes = [
     component: MainDashboardComponent,
   },
 
-  {
-    path: "profile",
-   
-    component: ProfileComponent,
-  },
+
 
   {
     path: "analytics",
    
     component: AnalyticsComponent,
+  },
+  {
+    path: "user-detail",
+   
+    component: UserDetailComponent,
   },
 ];
 
