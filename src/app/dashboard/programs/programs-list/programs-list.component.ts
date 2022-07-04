@@ -1,5 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  ApiserviceService
+} from 'src/app/apiservice.service';
+import * as moment from 'moment';
+import {
+  MatSnackBar
+} from '@angular/material/snack-bar';
+import {
+  Router
+} from '@angular/router';
+import {
+  AuthenticationService
+} from 'src/app/auth.service';
+import { DocumentService } from './../../../services/document.service';
 @Component({
   selector: 'app-programs-list',
   templateUrl: './programs-list.component.html',
@@ -143,10 +159,25 @@ imageurl: "assets/categories/cat-1.png",
 p: number = 1;
 showAction: boolean;
 
-  constructor() { }
+documents: any;
+id: any;
+constructor( private _documentService : DocumentService,private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {}
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
 
+  this.getDocumentList();
+}
+
+getDocumentList = () =>
+this._documentService
+  .GetDocumentProgramsList()
+  .subscribe(res => {
+    this.documents = res;
+    console.log(this.documents.payload)
+  });
+
+  deleteDocument = data => this._documentService.DeleteDocument(data);
 
 }
+
+

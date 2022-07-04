@@ -39,7 +39,22 @@ export class AuthenticationService {
         this._snackBar.open("You are successfully loggedIn", "Thanks", {
           duration: 3000
         });
+        console.log(res.user.displayName)
+
+        // photo url
+        //userId 
+        // idtoken 
+
+        let user:any = {
+          userName : res.user.displayName,
+          photoUrl : res.user.photoURL,
+
+        }
+
+        localStorage.setItem("user_name" , res.user.displayName)
+        localStorage.setItem("photo_url" , res.user.photoURL)
         this.router.navigate(['/dashboard/home/main'])
+
       })
       .catch(err => {
         console.log('Something is wrong:', err.message);

@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     private AuthenticationService: AuthenticationService,
     private router: Router,
   ) {
-    this.urls = localStorage.getItem('userRole')
+    this.urls = localStorage.getItem('user_name')
   }
 
   canActivate(
@@ -26,7 +26,8 @@ export class AuthGuard implements CanActivate {
   }
 
   checkLogin(url: string): boolean {
-    this.token = localStorage.getItem('authToken');
+    console.log("sssss", url)
+    this.token = localStorage.getItem('user_name');
     if (this.token == null || '' || undefined) {
       this.router.navigate(['/login']);
       return false;
