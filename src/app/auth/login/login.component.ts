@@ -13,7 +13,6 @@ import {
 import {
   Router
 } from '@angular/router';
-
 import {
   ApiserviceService
 } from 'src/app/apiservice.service';
@@ -23,13 +22,11 @@ import {
 import {
   MatSnackBar
 } from '@angular/material/snack-bar';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   spinner: boolean = false;
@@ -84,7 +81,7 @@ export class LoginComponent implements OnInit {
       return;
   }
   this.spinner = false;
-    this.authenticationService.SignIn(this.email, this.password);
+    this.authenticationService.SignIn(data.emailId, data.password);
     this.email = ''; 
     this.password = '';
   }
