@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
       return;
   }
   this.spinner = false;
-    this.authenticationService.SignIn(this.email, this.password);
+    this.authenticationService.SignIn(data.emailId, data.password);
     this.email = ''; 
     this.password = '';
   }
