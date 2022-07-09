@@ -47,10 +47,10 @@
                         <td>{{item.userName}}</td>
                         <td class="icon-td"> 
                             <button mat-icon-button  aria-label="Example icon button with a home icon" (click)="editAction()">
-                                <img src="assets/icon/edit-icon.svg">
+                                <img src="assets/icon/edit-icon.svg" class="edit-icon">
                             </button>
                             <button mat-icon-button  aria-label="Example icon button with a home icon">
-                             <i class="fa fa-trash"></i>
+                              <img src="assets/icon/trash.svg" >
                             </button>
                           </td>
                           <td *ngIf="showAction"><button class="btn btn-cancel" (click)="cancelAction()">
