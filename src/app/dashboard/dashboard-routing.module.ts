@@ -34,34 +34,42 @@ const routes: Routes = [{
     },
     {
       path: 'payment-setup',
+      canActivate: [AuthGuard],
       component: PaymentComponent
     },
     {
       path: 'categories',
+      canActivate: [AuthGuard],
       component: CategoriesListComponent
     },
     {
       path: 'create-new-category',
+      canActivate: [AuthGuard],
       component: CreateNewCategoryComponent
     },
     {
       path: 'category-detail',
+      canActivate: [AuthGuard],
       component: CategoryDetailComponent
     },
     {
       path: 'programs',
+      canActivate: [AuthGuard],
       component: ProgramsListComponent
     },
     {
       path: 'programs-new-category',
+      canActivate: [AuthGuard],
       component: CreateNewProgramComponent
     },
     {
       path: 'program-detail',
+      canActivate: [AuthGuard],
       component: ProgramDetailsComponent
     },
     {
       path: 'intro-question',
+      canActivate: [AuthGuard],
       component: IntroQuestionComponent
     },
 

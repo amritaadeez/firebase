@@ -13,14 +13,17 @@ import { ApiserviceService } from '../apiservice.service';
 })
 export class NavbarComponent implements OnInit {
 
-  userEmail: string;
-  userId: string;
+  userInfo: any;
+  userInfoPhoto: any;
+ 
 
   constructor( private apiService: ApiserviceService, public router: Router) { }
 
   ngOnInit(): void { 
-    this.userEmail = localStorage.getItem("email");
-    this.userId = localStorage.getItem("id");
+    this.userInfo = localStorage.getItem("user_name");
+    this.userInfoPhoto = localStorage.getItem("photo_url");
+    console.log(this.userInfo)
+
   }
 
 

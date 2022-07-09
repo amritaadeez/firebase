@@ -15,6 +15,7 @@ import {
 import {
   AuthenticationService
 } from 'src/app/auth.service';
+import { DocumentService } from './../../../services/document.service';
 
 @Component({
   selector: 'app-main-dashboard',
@@ -187,31 +188,27 @@ export class MainDashboardComponent implements OnInit {
 
   p: number = 1;
 
-  label: any;
-  chartDataYAxis: any;
-  saleDataObj: any;
-  chartDataXAxis: any;
-  fullIotData: any;
-  insideIotData: any;
-  insideIot: Array < any > = []
-  loader: boolean;
-  iotdata: any;
-  nameList: any;
+ 
 
-  view = [400, 350]
-  checkLength: any;
-  dateFilter: any;
-  responseDate: any;
-  wifi: any;
-  nextDate: number;
-  previousDate: number;
-  wifi1: boolean = true;
-  constructor(private apiService: ApiserviceService, private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {}
+  
+
+  documents: any;
+  id: any;
+  constructor(private apiService: ApiserviceService, private _documentService : DocumentService,private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
 
-
+    this.getDocumentList();
+    // localStorage.setItem("user_details" , user)
   }
 
+  getDocumentList = () =>
+  this._documentService
+    .GetDocumentUserList()
+    .subscribe(res => {
+      this.documents = res;
+      console.log(this.documents.payload)
+    });
 
+    deleteDocument = data => this._documentService.DeleteDocument(data);
 }
