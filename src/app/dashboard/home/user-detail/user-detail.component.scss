@@ -305,5 +305,20 @@
   pagination-controls {
     text-align: end !important;
   }
+
+  .user-detail-prof{
+    width: 17% !important;
+  }
+  .user-detail-right{
+    width: 83% !important; margin: 0 !important; align-items: center;
+  }
+  @media(min-width: 1599px){
+    .user-detail-prof{
+      width: 12% !important;
+    }
+    .user-detail-right{
+      width: 88% !important; margin: 0 !important; align-items: center;
+    }
+  }
   
   

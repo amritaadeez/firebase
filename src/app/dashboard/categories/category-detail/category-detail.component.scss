@@ -24,8 +24,9 @@
     .edit{
         position: absolute;
     right: 1.7em;
-    top: 2.9em;
+    top: 2.4em;
     width: 1.4vw;
+    cursor: pointer;
     }
     .padding-row{
         padding-top: 9em;
@@ -204,7 +205,14 @@
   }
   
   
-  
+.play-btn{
+    img{
+        border-radius: 50% !important;
+    background-color: #0d86d12f !important;
+    padding: 5px !important;
+    margin-right: 8px !important;
+    }
+}
   
   
   
@@ -275,7 +283,7 @@
     overflow: auto ;
   }
   table {
-   
+   table-layout: fixed;
   
     .fa-eye {
   color: #0d87d1;
@@ -290,6 +298,9 @@
       margin: 0 !important;
       padding: 0 !important;
     }
+    span {
+      display: inline-block !important;
+    }
   }
   
   
@@ -299,17 +310,36 @@
   }
   
   th {
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     color: #000 !important;
   }
   
   td {
-    font-weight: 300 !important;
-    color: #323232;
+    font-weight: 400 !important;
+    color: #000;
   }
   
   pagination-controls {
     text-align: end !important;
   }
   
+ 
+
+  td {
+    align-items: center;
+    
+  }
+  @media(max-width: 1401px){
+  // table .img-fluid{
+  //     height: 80px;
+  //   width: 141px;
+  //   border-radius: 10px;
+  //   }
+    .btn-cancel, .btn-save{
+      width: 77px;
+      padding: 3px !important;
+      font-size: smaller;
+      margin-right: 0.2em !important;
+    }
+  }
   

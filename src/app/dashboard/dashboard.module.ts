@@ -19,6 +19,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { NgxFileDropModule } from 'ngx-file-drop';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -64,7 +67,9 @@ import { IntroQuestionComponent } from './intro-question/intro-question.componen
     MatTabsModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxFileDropModule,
+    MatProgressBarModule
   ]
 })
 export class DashboardModule { }

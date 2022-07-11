@@ -12,9 +12,52 @@
                 <h4 > Intro Questions </h4>
                 </span>
             <div class="card component-card_9 zindex" >
-              <div class="card-body " style="height: 90vh;">
+              <div class="card-body ">
                 <div class="row">
-                 
+                 <div class="col-4"> 
+                  <span>Do you have meditation experience?</span>                 
+                      <section class="example-section">
+                        <mat-progress-bar
+                            class="example-margin"
+                            [color]="color"
+                            [mode]="mode"
+                            [value]='value'
+                            >
+                        </mat-progress-bar>
+                      </section>
+                      <label>None {{value}}%</label>
+                    
+                 </div>
+                 <div class="col-4"> 
+                  <span>What do you need most right now?</span>
+
+                  <section class="example-section">
+                    <mat-progress-bar
+                        class="example-margin"
+                        [color]="color"
+                        [mode]="mode"
+                        [value]='value1'
+                        >
+                    </mat-progress-bar>
+                  </section>
+                  <label>A Little {{value1}}%</label>
+                
+             </div>
+             <div class="col-4">         
+              <span>What is the best time of day for your to meditate?</span>
+
+              <section class="example-section">
+                <mat-progress-bar
+                    class="example-margin"
+                    [color]="color"
+                    [mode]="mode"
+                    [value]='value2'
+                    >
+                </mat-progress-bar>
+              </section>
+              <label>A Lot {{value2}}%</label>
+            
+         </div>
                 </div>
                
                
