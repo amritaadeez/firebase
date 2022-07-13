@@ -103,6 +103,7 @@
       // box-shadow: 1px 2px 13px 4px rgba(0, 0, 0, 0.18);
       border-radius: 5px;
       border: 0 !important;
+      height: 27vh;
   
       .card-title {
         color: #000;
@@ -225,8 +226,27 @@
       opacity: 1;
     }
   }
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: end;
+    height: 26px;
+  }
   
-  
+  .mat-progress-bar {
+    display: block;
+    height: 9px;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 250ms linear;
+    width: 100%;
+    border-radius: 10px !important;
+}
+
+.card-body span{
+  font-size: 14px;
+  font-weight: 500;
+}
   
   .placeholder-loader {
     height: 2vh;
@@ -308,6 +328,13 @@
   
   pagination-controls {
     text-align: end !important;
+  }
+
+  @media (min-width: 1100px) and (max-width: 1399px){
+    .card-body span{
+      font-size: 10px;
+      font-weight: 600;
+    }
   }
   
   

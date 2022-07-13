@@ -16,6 +16,8 @@ import {
   AuthenticationService
 } from 'src/app/auth.service';
 import { DocumentService } from './../../../services/document.service';
+import {MatDialog} from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-main-dashboard',
@@ -57,130 +59,6 @@ export class MainDashboardComponent implements OnInit {
 
   saleData: any[]
 
-  collection = [{
-      
-      
-          "firstName": "Lorem",
-          "lastName": "Ipsum",
-          "userName": "LoremIpsum",
-          "email": "LoremIpsum@lorem"
-
-  },
-  {
-      
-      
-    "firstName": "Lorem",
-    "lastName": "Ipsum",
-    "userName": "LoremIpsum",
-    "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-},{
-      
-      
-  "firstName": "Lorem",
-  "lastName": "Ipsum",
-  "userName": "LoremIpsum",
-  "email": "LoremIpsum@lorem"
-
-}
-
-  ];
 
   saleDataPie = [
 
@@ -194,12 +72,30 @@ export class MainDashboardComponent implements OnInit {
 
   documents: any;
   id: any;
-  constructor(private apiService: ApiserviceService, private _documentService : DocumentService,private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {}
+  constructor(private apiService: ApiserviceService, private _documentService : DocumentService, public dialog: MatDialog, private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
-
+    console.log("username")
     this.getDocumentList();
     // localStorage.setItem("user_details" , user)
+  }
+
+
+  openDialog(datas: any) {
+   let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: {
+       items: datas
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      if (result.event == "Proceed") {
+      this._documentService.DeleteUser(result.data.items);
+      } else {
+
+      }
+    });
   }
 
   getDocumentList = () =>
@@ -207,8 +103,12 @@ export class MainDashboardComponent implements OnInit {
     .GetDocumentUserList()
     .subscribe(res => {
       this.documents = res;
-      console.log(this.documents.payload)
+      console.log("username", this.documents)
     });
 
-    deleteDocument = data => this._documentService.DeleteDocument(data);
+    changeRoute(data: any) {
+      this.AuthenticationService.dataTransfer.next(data)
+      this.router.navigate(['/dashboard/home/user-detail'])
+    }
+
 }

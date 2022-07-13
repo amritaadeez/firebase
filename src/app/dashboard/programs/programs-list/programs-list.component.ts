@@ -168,6 +168,11 @@ ngOnInit(): void {
   this.getDocumentList();
 }
 
+changeRoute(data: any) {
+  this.AuthenticationService.dataTransfer.next(data)
+  this.router.navigate(['/dashboard/program-detail'])
+}
+
 getDocumentList = () =>
 this._documentService
   .GetDocumentProgramsList()

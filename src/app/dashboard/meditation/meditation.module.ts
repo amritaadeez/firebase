@@ -5,6 +5,8 @@ import { MeditationRoutingModule } from './meditation-routing.module';
 import { MeditationListComponent } from './meditation-list/meditation-list.component';
 import { CreateNewComponent } from './create-new/create-new.component';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { NgxFileDropModule } from 'ngx-file-drop';
+
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
   imports: [
     CommonModule,
     MeditationRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxFileDropModule
   ]
 })
 export class MeditationModule { }

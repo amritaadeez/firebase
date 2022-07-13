@@ -19,6 +19,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { NgxFileDropModule } from 'ngx-file-drop';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -30,6 +33,7 @@ import { ProgramsListComponent } from './programs/programs-list/programs-list.co
 import { CreateNewProgramComponent } from './programs/create-new-program/create-new-program.component';
 import { ProgramDetailsComponent } from './programs/program-details/program-details.component';
 import { IntroQuestionComponent } from './intro-question/intro-question.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -49,6 +53,7 @@ import { IntroQuestionComponent } from './intro-question/intro-question.componen
     CreateNewProgramComponent,
     ProgramDetailsComponent,
     IntroQuestionComponent,
+    ConfirmationDialogComponent,
 
   ],
   imports: [
@@ -64,7 +69,9 @@ import { IntroQuestionComponent } from './intro-question/intro-question.componen
     MatTabsModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxFileDropModule,
+    MatProgressBarModule
   ]
 })
 export class DashboardModule { }

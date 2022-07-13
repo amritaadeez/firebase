@@ -12,6 +12,7 @@ import {
 import {
   Observable
 } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import {
   Router
 } from '@angular/router';
@@ -25,7 +26,7 @@ export class AuthenticationService {
   constructor(private angularFireAuth: AngularFireAuth, private _snackBar: MatSnackBar, public router: Router) {
     this.userData = angularFireAuth.authState;
   }
-
+  dataTransfer = new BehaviorSubject < any > ('');
 
 
   /* Sign in */

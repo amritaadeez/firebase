@@ -12,7 +12,7 @@ body {
 background-color: #f2f2f2;
   // color: #0e1726 !important;
   color: #0e1726 !important;
-  font-size: 0.875rem !important;
+  // font-size: 0.875rem !important;
   letter-spacing: 0.0312rem !important;
   font-family: 'Poppins', sans-serif !important;
 }
@@ -73,7 +73,7 @@ background-color: #f2f2f2;
 
 input,
 select {
-  font-size: 2vh !important;
+  font-size: 16px !important;
 }
 
 .eye-icon {
@@ -147,3 +147,83 @@ ngx-charts-legend > div > div > ul {
   border-radius: 4px 4px 0 0;
   padding: 0em 0.75em 0 0.75em !important;
 }
+
+button img {
+  padding: 0;
+  min-width: 0;
+  width: 20px;
+  height: 25px;
+}
+button .edit-icon{
+  width: 18px;
+  height: 20px;
+}
+
+@media (max-width: 1599px){
+  td, th, input {
+    font-size: 14px !important;
+    
+  }
+  .fa-search {
+    font-size: 14px !important;
+    top: 16px !important;
+
+  }
+ .search-div .search-form{
+    height: 45px !important;
+    border: 1px solid #DDDDDD;
+    padding: 1.5em 2.4em 1.5em 0.75em !important;
+  }
+  h4{
+    font-size: 16px !important;
+    font-weight: 500px !important;
+  }
+  span h4, h3{
+    margin: 0 1em 0 0 !important;
+    font: 500 16px Poppins !important;
+  }
+  span h3{
+    font-weight: 400;
+    font-size: 16px;
+  }
+p{
+    font: 500 15px Poppins !important;
+  }
+  label{
+    font: 400 14px Poppins !important;
+  }
+  
+}
+
+ngx-file-drop>div {
+  border: 2px dotted #C2C2C2 !important;
+    border-radius: 10px !important;
+    height: 100% !important;
+    margin: auto;
+   
+}
+
+ngx-file-drop>div>div {
+  display: grid !important;
+  text-align: center;
+  padding: 2em;
+    height: auto !important;
+    color: #0e172699 !important;
+}
+ngx-file-drop>div>div>a {
+  color: #0D87D1 !important;
+  cursor: pointer;
+}
+ngx-file-drop svg {
+  width: 2em !important;
+    height: 2em !important;
+    position: relative !important;
+    color: #00000099 !important;
+}
+
+.mat-progress-bar-fill::after {
+  background-color: #0D87D1 !important;
+}
+
+
+

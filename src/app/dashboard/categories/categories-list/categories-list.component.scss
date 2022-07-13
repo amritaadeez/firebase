@@ -6,7 +6,7 @@
     input,
     select {
       padding: 6px 27px 6px 15px;
-      border: none;
+      // border: ;
       width: 100% !important;
       background-color: #fff;
       color: #000;
@@ -253,7 +253,7 @@
     overflow: auto ;
   }
   table {
-   
+   table-layout: fixed;
   
     .fa-eye {
   color: #0d87d1;
@@ -264,7 +264,6 @@
     }
   
     .icon-td {
-      display: flex;
       margin: 0 !important;
       padding: 0 !important;
     }
@@ -307,5 +306,19 @@
 
   td {
     align-items: center;
-    
+    vertical-align: middle !important;
+  }
+
+  @media(max-width: 1401px){
+    .img-fluid{
+      height: 80px;
+    width: 141px;
+    border-radius: 10px;
+    }
+    .btn-cancel, .btn-save{
+      width: 77px;
+      padding: 3px !important;
+      font-size: smaller;
+      margin-right: 0.2em !important;
+    }
   }

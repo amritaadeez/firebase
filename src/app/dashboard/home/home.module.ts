@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
@@ -23,6 +22,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatSlideToggleModule,
     NgxPaginationModule,
     FormsModule,
+    ReactiveFormsModule,
     Ng2SearchPipeModule,
     MatTableModule,
     MatButtonModule,

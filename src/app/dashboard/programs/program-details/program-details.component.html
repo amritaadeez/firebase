@@ -1,4 +1,4 @@
-<div class="main-content">
+<div class="main-content"  >
 
 
 
@@ -13,10 +13,92 @@
                 <h3>Program Details</h3>
                 </span>
             <div class="card component-card_9 zindex" >
-              <div class="card-body " style="height: 90vh;">
-                <div class="row">
+              <div class="card-body ">
+                <form [formGroup]="editDocumentForm" novalidate>
+                  <div class="row">
+                   <div class="row" style="width: 40% !important; ">
+                   <div class="col-12 p-0">
+                    <label>Category Image</label>
+                    <div class="center">
+                    <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
+                      (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".png">
+                      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                        <p *ngIf="!filePresent"> <i class="fa fa-image"></i> </p>
+                        <p *ngIf="!filePresent">Add Background Image</p>
+                    <h5 *ngIf="filePresent">
+                    <h4 *ngIf="filePresent"> <img style="height: 8em; width: 20vw;" src="{{filePresent}}"> </h4>
+   
+                  <h6> {{ filePresent.name }}</h6>
+                  <!-- <p class="para"> File Type : <b> png </b></p>
+                  <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
+                </h5>
+                      <a (click)="openFileSelector()" *ngIf="!filePresent">click to browse</a>
+                      </ng-template>
+                      </ngx-file-drop>
+                    </div>
+                   </div>
+                    </div>
+                   <div class="row" style="width: 60% !important; margin: 0 auto !important;">
+                    <div class="col-6">
+                      <label>Category Name</label>
+                      <input  formControlName="title" type="text" placeholder="Enter Category Name"  class="form-control">
+                      <img src="assets/icon/edit-icon.svg" class="edit">
+                    </div>
+                    <div class="col-6">
+        
+                      <h6 style="color: transparent;"> dd</h6>
+                     <button class="btn  btn-save" color="primary" type="button" style="margin-left: 0.5em;" (click)="updateProgram(editDocumentForm)">Save</button>
+                     <button  (click)="openDialog()" class="btn   btn-cancel" type="button">Delete</button>
+                    </div>
+                    
+                    </div>
+                  </div>
                  
-                </div>
+                  
+                 
+                </form>
+                <hr>
+                <label>Meditation Audios</label>
+                 <div class="table-div">
+                   
+                   <table class="table">
+                     <thead>
+                       <tr>
+                         <th>S.no</th>
+                         <th>Meditate Image</th>
+                         <th>Meditate Name</th>
+                         <th>Action</th>
+                         <th></th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr *ngFor="let item of documents | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                         <td>{{i+1}}</td>
+                         <td style="    width: 50%;"><img src={{item.payload.doc.data().background_image}} alt="" class="img-fluid"></td>
+                         <td>{{item.payload.doc.data().title}}</td>
+                         <td class="icon-td"> 
+                         <button mat-icon-button  aria-label="Example icon button with a home icon" (click)="editAction(item)" >
+                              <img src="assets/icon/edit-icon.svg" class="edit-icon">
+                          </button> 
+                          <button mat-icon-button  aria-label="Example icon button with a home icon">
+                            <img src="assets/icon/trash.svg" >
+                          </button>
+                        </td>
+                        <td *ngIf="showAction"><button class="btn btn-cancel" (click)="cancelAction()">
+                          Cancel
+                      </button>
+                      <button class="btn btn-save">
+                       Save
+                      </button></td>
+                       </tr>
+                      
+                     </tbody>
+                   </table>
+                   
+                 </div>
+                
+                 <hr>
+                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
                
                
               </div>
