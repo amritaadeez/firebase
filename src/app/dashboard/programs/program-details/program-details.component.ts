@@ -155,8 +155,8 @@ this._documentService
 
   updateProgram(form: any) {
     console.log(form.value)
-   
-      this._documentService.updateProgramDocument(this.selectedData.payload.doc.data().id, form.value)
+   console.log(this.selectedData.payload.doc.id)
+      this._documentService.updateProgramDocument(this.selectedData.payload.doc.id, form.value)
       .then(
         res => {
           this._snackBar.open("Updated Successfully", "Thanks", {

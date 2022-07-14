@@ -35,13 +35,17 @@ export class DocumentService {
   GetDocumentMeditationList() {
     return this.firestore.collection("meditations").snapshotChanges();
   }
+
+  Getaudios(id: string) {
+    return this.firestore.collection("meditations/"+id+'/audios').valueChanges();
+  }
   GetDocumentQuestionList() {
-    return this.firestore.collection("questions").snapshotChanges();
+    return this.firestore.collection("questions").valueChanges();
   }
   GetDocumentUserList() {
     return this.firestore.collection("users").snapshotChanges();
   }
-  GetQuestionsDocument(id: string) {
+  GetQuestionsDocument() {
     return this.firestore.collection("questions").snapshotChanges();
   } 
   GetUserDocument(id: string) {

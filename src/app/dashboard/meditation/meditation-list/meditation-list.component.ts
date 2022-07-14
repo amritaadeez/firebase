@@ -24,138 +24,7 @@ import { DocumentService } from './../../../services/document.service';
 export class MeditationListComponent implements OnInit {
   
   p: number = 1;
-  collection = [{
-      
-      
-    "firstName": "01",
-    "lastName": "Ipsum",
-    "userName": "LoremIpsum",
-    "email": "LoremIpsum@lorem"
-
-},
-{
-
-
-"firstName": "02",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "03",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "04",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "05",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "06",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "07",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "08",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "09",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "10",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "11",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "12",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "13",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "14",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "15",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-},{
-
-
-"firstName": "16",
-"lastName": "Ipsum",
-"userName": "LoremIpsum",
-"email": "LoremIpsum@lorem"
-
-}
-
-];
+  
 
 documents: any;
 id: any;
@@ -166,14 +35,39 @@ ngOnInit(): void {
   this.getDocumentList();
 }
 
+// getDocumentList = () =>
+// this._documentService
+//   .GetDocumentMeditationList()
+//   .subscribe(res => {
+//     this.documents = res;
+//     console.log(this.documents)
+
+
+//   });
 getDocumentList = () =>
 this._documentService
   .GetDocumentMeditationList()
   .subscribe(res => {
-    this.documents = res;
-    console.log(this.documents.payload)
+
+  
+
+   this.documents = res;
+    // console.log(this.documents)
+
+
   });
 
   deleteDocument = data => this._documentService.DeleteDocument(data);
+
+  playButton(data){
+    console.log("fghjk")
+    this._documentService.Getaudios(data.payload.doc.id).subscribe(res => {
+      console.log("chal ja")
+  console.log(res)
+       // console.log(this.documents)
+   
+   
+     });
+  }
 
 }

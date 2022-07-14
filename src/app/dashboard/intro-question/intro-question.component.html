@@ -12,23 +12,23 @@
                 <h4 > Intro Questions </h4>
                 </span>
             <div class="card component-card_9 zindex" >
-              <div class="card-body ">
+              <div class="card-body " >
                 <div class="row">
-                 <div class="col-4"> 
-                  <span>Do you have meditation experience?</span>                 
+                 <div class="col-4" *ngFor="let item of documents;"> 
+                  <span>{{item.question}}</span>                 
                       <section class="example-section">
                         <mat-progress-bar
                             class="example-margin"
                             [color]="color"
                             [mode]="mode"
-                            [value]='value'
+                            [value]=''
                             >
                         </mat-progress-bar>
                       </section>
                       <label>None {{value}}%</label>
                     
                  </div>
-                 <div class="col-4"> 
+                 <!-- <div class="col-4"> 
                   <span>What do you need most right now?</span>
 
                   <section class="example-section">
@@ -57,7 +57,7 @@
               </section>
               <label>A Lot {{value2}}%</label>
             
-         </div>
+         </div> -->
                 </div>
                
                

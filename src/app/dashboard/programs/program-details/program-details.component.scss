@@ -341,4 +341,16 @@ table .img-fluid{
     margin-right: 0.2em !important;
   }
 }
+@media(min-width: 991px){
+  .col-left{
+    width: 40% !important; 
+  }
+  .col-right{
+    width: 60% !important; margin: 0 auto !important;
+  }
+}
+
+input#file-upload-button{
+  display: none !important;
+}
   

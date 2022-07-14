@@ -1,13 +1,13 @@
-<!-- <button class="navbar-toggler" [ngClass]="{'active': hideMobileMenu}" data-target="#navbar" data-toggle="collapse"
+<button class="navbar-toggler" [ngClass]="{'active': hideMobileMenu}" data-target="#navbar" data-toggle="collapse"
   type="button" (click)="toggleSideNav()" aria-expanded="false"><span class="icon-bar"></span><span
-    class="icon-bar"></span><span class="icon-bar"></span></button> -->
+    class="icon-bar"></span><span class="icon-bar"></span></button>
 
 <aside class="  mobile mobile-sidebar" *ngIf="hideMobileMenu" [@enterAnimation]>
   <div class="col-md-12 col-sm-12 col-12 col-xl-2 col-lg-2" id="navbar">
 
     <div class=" column-first mobile-toggle">
 
-      <ul id="myGroup">
+      <!-- <ul id="myGroup">
         <li routerLinkActive="active" routerLink="/dashboard/home/main"
           class="list" (click)="toggleSideNav()">
           <div class="collapse-expand"><span routerLinkActive="active"> 
@@ -17,6 +17,43 @@
           </div>
         </li>
      
+
+      </ul> -->
+
+      <ul id="myGroup">
+        <li routerLinkActive="active" routerLink="/dashboard/home/main" (click)="toggleSideNav()" class="list">
+          <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rla="routerLinkActive">
+            <img src="{{ rla.isActive ? 'assets/sidebar/user.svg' : 'assets/sidebar/user-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> User </span>
+          </div>
+        </li>
+
+        <li routerLinkActive="active" routerLink="/dashboard/payment-setup" (click)="toggleSideNav()" class="list">
+          <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlaw="routerLinkActive">
+            <img src="{{ rlaw.isActive ? 'assets/sidebar/wallet.svg' : 'assets/sidebar/wallet-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Payment Setup </span>
+          </div>
+        </li>
+        <li routerLinkActive="active" routerLink="/dashboard/meditation/meditation-list" (click)="toggleSideNav()" class="list">
+          <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlam="routerLinkActive">
+            <img src="{{ rlam.isActive ? 'assets/sidebar/meditation.svg' : 'assets/sidebar/meditation-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Meditations </span>
+          </div>
+        </li>
+        <li routerLinkActive="active" class="list" routerLink="/dashboard/categories" (click)="toggleSideNav()">
+          <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlac="routerLinkActive">
+            <img src="{{ rlac.isActive ? 'assets/sidebar/categories.svg' : 'assets/sidebar/categories-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Categories </span>
+          </div>
+        </li>
+        <li routerLinkActive="active" class="list" class="list" routerLink="/dashboard/programs" (click)="toggleSideNav()">
+          <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlap="routerLinkActive">
+            <img src="{{ rlap.isActive ? 'assets/sidebar/programs.svg' : 'assets/sidebar/programs-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Programs </span>
+          </div>
+        </li>
+
+        <li routerLinkActive="active" class="list" routerLink="/dashboard/intro-question" (click)="toggleSideNav()">
+          <div routerLinkActive="active" class="collapse-expand"><span routerLinkActive="active" #rlai="routerLinkActive">
+            <img src="{{ rlai.isActive ? 'assets/sidebar/intro.svg' : 'assets/sidebar/intro-inactive.svg'}}" style="margin-right: 1vh;"  class="img-fluid"/> Intro Questions </span>
+          </div>
+        </li>
+        
 
       </ul>
     </div>
