@@ -19,11 +19,13 @@ import {
 export class ConfirmationDialogComponent implements OnInit {
 
   items : any
+  texts: any;
 
-  constructor(public dialogRef: MatDialogRef < ConfirmationDialogComponent > , @Inject(MAT_DIALOG_DATA) public data: any) {
-    console.log(data)
+  constructor(public dialogRef: MatDialogRef < ConfirmationDialogComponent > , @Inject(MAT_DIALOG_DATA) public data: any,) {
+    // console.log(data)
 
     this.items = data
+    this.texts = data.text
   }
 
   ngOnInit(): void {}

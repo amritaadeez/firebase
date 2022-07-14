@@ -169,11 +169,12 @@ this._documentService
   }
 
   
-  openDialog() {
+  openDialog(text:any) {
     console.log(this.selectedData)
     let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
        data: {
-        items: this.selectedData
+        items: this.selectedData,
+        text: text
        },
      });
  

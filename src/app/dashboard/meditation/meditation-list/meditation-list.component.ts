@@ -16,6 +16,8 @@ import {
   AuthenticationService
 } from 'src/app/auth.service';
 import { DocumentService } from './../../../services/document.service';
+import {MatDialog} from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
 @Component({
   selector: 'app-meditation-list',
   templateUrl: './meditation-list.component.html',
@@ -28,7 +30,8 @@ export class MeditationListComponent implements OnInit {
 
 documents: any;
 id: any;
-constructor( private _documentService : DocumentService,private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {}
+  playUrl: unknown[];
+constructor( private _documentService : DocumentService,private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService, public dialog: MatDialog) {}
 
 ngOnInit(): void {
 
@@ -59,15 +62,48 @@ this._documentService
 
   deleteDocument = data => this._documentService.DeleteDocument(data);
 
-  playButton(data){
+  playButton(data, text:any){
     console.log("fghjk")
     this._documentService.Getaudios(data.payload.doc.id).subscribe(res => {
       console.log("chal ja")
   console.log(res)
+  // this.playUrl = res
+  let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+    data: {
+     items: res,
+     text: text
+    },
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    // console.log('The dialog was closed', result);
+    // if (result.event == "Proceed") {
+    // this._documentService.DeleteUser(result.data.items);
+    // } else {
+
+    // }
+  });
        // console.log(this.documents)
    
    
      });
   }
+
+  openDialog(datas: any) {
+    let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+       data: {
+        items: datas
+       },
+     });
+ 
+     dialogRef.afterClosed().subscribe(result => {
+       console.log('The dialog was closed', result);
+       if (result.event == "Proceed") {
+       this._documentService.DeleteUser(result.data.items);
+       } else {
+ 
+       }
+     });
+   }
 
 }

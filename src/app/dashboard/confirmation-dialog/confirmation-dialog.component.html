@@ -1,4 +1,4 @@
-
+<div *ngIf="texts == 'delete'">
 <div mat-dialog-content>
   <p>Are you sure you want to Delete?</p>
  
@@ -8,3 +8,20 @@
   <button mat-raised-button color="" (click)="onNoClick('NO')">No Thanks</button>
   <button mat-raised-button color="primary" cdkFocusInitial (click)="onNoClick('YES')">Delete</button>
 </div>
+</div>
+<div *ngIf="texts == 'music'">
+  <div mat-dialog-content>
+    <p>{{items.items[0].title | uppercase}}</p>
+    <audio
+    controls
+    autoplay
+    src="{{items.items[0].audio_file}}">
+        Your browser does not support the
+        <code>audio</code> element.
+</audio>
+  </div>
+  <hr>
+  <div mat-dialog-actions class="bottom-buttons">
+    <button mat-raised-button color="" (click)="onNoClick('NO')">Close</button>
+  </div>
+  </div>

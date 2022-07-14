@@ -49,10 +49,11 @@ p: number = 1;
     this.getDocumentList();
   }
 
-  openDialog(datas: any) {
+  openDialog(datas: any, text: any) {
     let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
        data: {
-        items: datas
+        items: datas,
+        text: text
        },
      });
  

@@ -19,6 +19,7 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent implements OnInit {
+  spin: boolean;
   filePresent(filePresent: any) {
     throw new Error('Method not implemented.');
   }
@@ -51,7 +52,7 @@ export class UserDetailComponent implements OnInit {
       data => {
 
         if (!data) {
-          this.router.navigate(['/dashboard/programs'])
+          this.router.navigate(['/dashboard/home/main'])
         } else {
           this.selectedData = data
           this.firstName = this.selectedData.payload.doc.data().first_name
@@ -62,7 +63,6 @@ export class UserDetailComponent implements OnInit {
       }
     )
 
-    console.log(this.selectedData)
     this.getDocumentList();
   }
 
@@ -80,10 +80,11 @@ export class UserDetailComponent implements OnInit {
   
     updateProgram(form: any) {
       console.log(form.value)
-     
-        this._documentService.updateUserDocument(this.selectedData.payload.doc.data().id, form.value)
+      this.spin =true
+        this._documentService.updateUserDocument(this.selectedData.payload.doc.id, form.value)
         .then(
           res => {
+            this.spin = false
             this._snackBar.open("Updated Successfully", "Thanks", {
               duration: 3000
             });
@@ -92,5 +93,6 @@ export class UserDetailComponent implements OnInit {
         )
       
     }
+   
 
 }
