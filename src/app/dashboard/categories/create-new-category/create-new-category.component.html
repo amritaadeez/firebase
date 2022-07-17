@@ -1,73 +1,69 @@
 <div class="main-content">
 
+  <div class="row data-row">
+    <div class="col-12 cl-lg-12 col-xl-12 col-md-12" style="height: 90vh; overflow: auto; padding: 5vh 3vh;">
+      <div class="row">
 
-
-
-    <div class="row data-row">
-      <div class="col-12 cl-lg-12 col-xl-12 col-md-12" style="height: 90vh; overflow: auto; padding: 5vh 3vh;">
-        <div class="row">
-          
-          <div class="col-12 ">
-            <span>
-                <h4 routerLink="/dashboard/categories"> Categories </h4> <img src="assets/icon/right-angle.svg" class="img-fluid">
-                <h3>Create new Category</h3>
-                </span>
-            <div class="card component-card_9 zindex" >
-              <div class="card-body ">
-                <form action="">
-                 <div class="row">
-                  <div class="row" style="width: 40% !important; ">
-                  <div class="col-12 p-0">
-                   <label>Upload Category Image</label>
-                   <div class="center">
-                   <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
-                     (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".png">
-                     <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-                       <p *ngIf="!filePresent"> <i class="fa fa-image"></i> </p>
-                       <p *ngIf="!filePresent">Add Background Image</p>
-                   <h5 *ngIf="filePresent">
-                   <h4 *ngIf="filePresent"> <i class="fa fa-image" style="color: green !important;"></i> </h4>
- 
-                 <h6> {{ filePresent.name }}</h6>
-                 <!-- <p class="para"> File Type : <b> png </b></p>
+        <div class="col-12 ">
+          <span>
+            <h4 routerLink="/dashboard/categories"> Categories </h4> <img src="assets/icon/right-angle.svg"
+              class="img-fluid">
+            <h3>Create new Category</h3>
+          </span>
+          <div class="card component-card_9 zindex">
+            <div class="card-body ">
+              <form  [formGroup]="addDocumentForm">
+                <div class="row">
+                  <div class="row" >
+                    <div class="col-6 p-0">
+                      <label>Upload Category Image</label>
+                      <div class="center">
+                        <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+                          (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".png">
+                          <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                            <p *ngIf="!filePresent"> <i class="fa fa-image"></i> </p>
+                            <p *ngIf="!filePresent">Add Background Image</p>
+                            <h5 *ngIf="filePresent">
+                              <h4 *ngIf="filePresent"> <i class="fa fa-image" style="color: green !important;"></i>
+                              </h4>
+                              <h6> {{ filePresent.name }}</h6>
+                              <!-- <p class="para"> File Type : <b> png </b></p>
                  <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
-               </h5>
-                     <a (click)="openFileSelector()" *ngIf="!filePresent">click to browse</a>
-                     </ng-template>
-                     </ngx-file-drop>
-                   </div>
+                            </h5>
+                            <a (click)="openFileSelector()" *ngIf="!filePresent">click to browse</a>
+                          </ng-template>
+                        </ngx-file-drop>
+                      </div>
+                    </div>
+                  
+                  
+                    <div class="col-5">
+                      <label>Category Name</label>
+                      <input type="text" placeholder="Enter Category Name"  formControlName="title" class="form-control">
+                    </div>
                   </div>
-                   </div>
-                  <div class="row" style="width: 60% !important; margin: 0 auto !important;">
-                   <div class="col-6">
-                     <label>Category Name</label>
-                     <input type="text" placeholder="Enter Category Name" class="form-control">
-                   </div>
-                   
-                   </div>
-                 </div>
-                
-                 <div class="mt-5">
-                   <button type="button" class="btn btn-cancel" routerLink="/dashboard/categories">Back</button>
-                   <button type="button" class="btn btn-save">Add Category</button>
-                 </div>
-                
-               </form>
-               
-               
-              </div>
-  
+                </div>
+
+                <div class="mt-5">
+                  <button type="button" class="btn btn-cancel" routerLink="/dashboard/categories">Back</button>
+                  <button type="button" class="btn btn-save" (click)="submitDocument(addDocumentForm)">Add Category</button>
+                </div>
+
+              </form>
+
+
             </div>
+
           </div>
         </div>
       </div>
-    
-  
     </div>
-  
-  
-  
-  
-  
+
+
   </div>
-  
+
+
+
+
+
+</div>

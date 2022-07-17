@@ -11,11 +11,24 @@ export class DocumentService {
   constructor(private firestore: AngularFirestore) {}
 
   /* Add Document */
-  AddDocument(document: Document) {
+  AddDocument(document) {
+    console.log(document)
     return new Promise<any>((resolve, reject) => {
-      this.firestore.collection("documents").add(document)
+      this.firestore.collection("categories").add(document)
         .then(res => {
           resolve(res);
+          console.log(res)
+        }, err => reject(err));
+    });
+  }
+
+  AddProgramsDocument(document) {
+    console.log(document)
+    return new Promise<any>((resolve, reject) => {
+      this.firestore.collection("programs").add(document)
+        .then(res => {
+          resolve(res);
+          console.log(res)
         }, err => reject(err));
     });
   }
@@ -34,6 +47,10 @@ export class DocumentService {
   }
   GetDocumentMeditationList() {
     return this.firestore.collection("meditations").snapshotChanges();
+  }
+
+  GetintroQuesList(id: string) {
+    return this.firestore.collection("questions/"+id+'/options').valueChanges();
   }
 
   Getaudios(id: string) {

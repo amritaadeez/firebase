@@ -4,6 +4,10 @@ import {
   MatSnackBar
 } from '@angular/material/snack-bar';
 
+import { DocumentService } from './../../../services/document.service';
+import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-create-new-category',
   templateUrl: './create-new-category.component.html',
@@ -11,9 +15,17 @@ import {
 })
 export class CreateNewCategoryComponent implements OnInit {
   filePresent: any;
-  constructor(private _snackBar: MatSnackBar) { }
+  addDocumentForm:FormGroup;
+
+  constructor(private _snackBar: MatSnackBar,  private _documentService : DocumentService,
+    private router : Router) { }
 
   ngOnInit(): void {
+    this.addDocumentForm = new FormGroup ({
+      title: new FormControl (null, [Validators.required, Validators.maxLength(200)]),
+      background_image: new FormControl (null),
+  
+    })
   }
 
   public files: NgxFileDropEntry[] = [];
@@ -85,6 +97,9 @@ export class CreateNewCategoryComponent implements OnInit {
   public fileLeave(event){
     console.log(event);
   }
-
+  submitDocument(form):void{
+    this._documentService.AddDocument(form.value);
+    this.router.navigate(['/dashboard/categories']);
+  }
 
 }

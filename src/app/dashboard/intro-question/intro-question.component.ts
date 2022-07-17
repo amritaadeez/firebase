@@ -33,6 +33,7 @@ export class IntroQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDocumentList()
+    // this.playButton()
   }
 
   getDocumentList = () =>
@@ -42,5 +43,15 @@ export class IntroQuestionComponent implements OnInit {
       this.documents = res;
       console.log("username", this.documents)
     });
+
+  //   playButton(){
+  //     console.log("fghjk")
+  //     this._documentService.GetintroQuesList(this.documents).subscribe(res => {
+  //       console.log("chal ja")
+  //   console.log(res)
+  //   // this.playUrl = res
+ 
+  //   });
+  // }
 
 }

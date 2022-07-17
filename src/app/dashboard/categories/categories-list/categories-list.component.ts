@@ -73,14 +73,13 @@ p: number = 1;
     .subscribe(res => {
       this.documents = res;
       
-      console.log(this.documents.payload)
+      console.log(this.documents)
     });
-
-   
+    
     updateProgram(form: any, item: any) {
       console.log(form.value)
-     
-        this._documentService.updateCategoryDocument(item.payload.doc.data().id, form.value)
+      console.log(item.payload.doc.id, "this.selectedData.payload.doc.id")
+        this._documentService.updateCategoryDocument(item.payload.doc.id, form.value)
         .then(
           res => {
             this.selectedIndex = null

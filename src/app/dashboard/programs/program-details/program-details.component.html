@@ -23,7 +23,8 @@
                     <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
                       (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".png" style="border: none !important;">
                       <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector" style="background-color: #000 !important;">
-                        <img style="height: 12em; width: 31vw; border-radius: 10px; position: relative; top: -2.1em;" src="{{filePresent}}">
+                        <img *ngIf="filePresent" style="height: 12em; width: 31vw; border-radius: 10px; position: relative; top: -2.1em;" src="{{filePresent}}">
+                        <img *ngIf="!filePresent" style="height: 12em; width: 31vw; border-radius: 10px; position: relative; top: -2.1em;" src="assets/iot_logo.jpg">
                         
                     <h5 *ngIf="filePresent" style="position: relative; top:-7em">
                     <h4 *ngIf="filePresent">  </h4>
@@ -43,7 +44,7 @@
                     </div>
                     <div class="col-12 col-md-6">
         
-                      <h6 style="color: transparent;"> dd</h6>
+                      <h5 style="color: transparent;"> dd</h5>
                      <button class="btn  btn-save" color="primary" type="button" style="margin-left: 0.5em;" (click)="updateProgram(editDocumentForm)">Save</button>
                      <button  (click)="openDialog('delete')" class="btn   btn-cancel" type="button">Delete</button>
                     </div>
@@ -71,7 +72,10 @@
                      <tbody>
                        <tr *ngFor="let item of documents | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                          <td>{{i+1}}</td>
-                         <td style="    width: 50%;"><img src={{item.payload.doc.data().background_image}} alt="" class="img-fluid"></td>
+                         <td style="    width: 50%;">
+                          <img *ngIf="item.payload.doc.data().background_image" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid">
+                          <img *ngIf="!item.payload.doc.data().background_image" src="assets/iot_logo.jpg" alt="" class="img-fluid">
+                        </td>
                          <td>{{item.payload.doc.data().title}}</td>
                          <td class="icon-td"> 
                          <button mat-icon-button  aria-label="Example icon button with a home icon" (click)="editAction(item)" >

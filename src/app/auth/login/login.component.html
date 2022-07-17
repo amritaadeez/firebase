@@ -12,7 +12,8 @@
                 <form class="text-left ng-untouched ng-pristine ng-invalid" role="form" [formGroup]="loginForm"
                   (ngSubmit)="signIn(loginForm.value)">
                   <div class="form">
-                    <div id="Email Id-field" class="field-wrapper input"><i class="fas fa-at"></i>
+                    <div id="Email Id-field" class="field-wrapper input">
+                      <i class="fas fa-at"></i>
                       <input id="Email Id"  name="Email Id" type="text" placeholder="Email Id"
                         formControlName="emailId" class="form-control" required
                         [ngClass]="{ 'is-invalid': submitted && loginGetter.emailId.errors }" />

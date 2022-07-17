@@ -40,8 +40,7 @@ export class UserDetailComponent implements OnInit {
         first_name: new FormControl (null, [Validators.required, Validators.maxLength(200)]),
         last_name: new FormControl (null, [Validators.required, Validators.maxLength(200)]),
         username: new FormControl (null, [Validators.required, Validators.maxLength(200)]),
-        email: new FormControl (null),
-
+        email: new FormControl (null, [Validators.required])
       });
   
     }
@@ -50,7 +49,6 @@ export class UserDetailComponent implements OnInit {
 
     this.AuthenticationService.dataTransfer.subscribe(
       data => {
-
         if (!data) {
           this.router.navigate(['/dashboard/home/main'])
         } else {
@@ -81,6 +79,7 @@ export class UserDetailComponent implements OnInit {
     updateProgram(form: any) {
       console.log(form.value)
       this.spin =true
+      console.log(this.selectedData.payload.doc.id, "this.selectedData.payload.doc.id")
         this._documentService.updateUserDocument(this.selectedData.payload.doc.id, form.value)
         .then(
           res => {
@@ -93,6 +92,4 @@ export class UserDetailComponent implements OnInit {
         )
       
     }
-   
-
 }

@@ -3,181 +3,191 @@
 
 
 
-    <div class="row data-row">
-      <div class="col-12 cl-lg-12 col-xl-12 col-md-12" style="height: 90vh; overflow: auto; padding: 5vh 3vh;">
-        <div class="row">
-          
-          <div class="col-12 ">
-            <span>
-                <h4 routerLink="/dashboard/meditation/meditation-list"> Meditation Audios </h4> <img src="assets/icon/right-angle.svg" class="img-fluid">
-                <h3>Create new Meditation</h3>
-                </span>
-            <div class="card component-card_9 zindex" >
-              <div class="card-body ">
-                <form action="">
-                 <label>Add Meditation Details</label>
-                <div class="row">
-                 <!-- <label>Add Meditation Details</label> -->
-                 <div class="row" style="width: 40% !important; ">
-                 <div class="col-12 p-0">
-                  <label>Background Image</label>
-                  <div class="center">
-                  <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
-                    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".png">
-                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-                      <p *ngIf="!filePresent"> <i class="fa fa-image"></i> </p>
-                      <p *ngIf="!filePresent">Add Background Image</p>
-                  <h5 *ngIf="filePresent">
-                  <h4 *ngIf="filePresent"> <i class="fa fa-image" style="color: green !important;"></i> </h4>
+  <div class="row data-row">
+    <div class="col-12 cl-lg-12 col-xl-12 col-md-12" style="height: 90vh; overflow: auto; padding: 5vh 3vh;">
+      <div class="row">
 
-                <h6> {{ filePresent.name }}</h6>
-                <!-- <p class="para"> File Type : <b> png </b></p>
+        <div class="col-12 ">
+          <span>
+            <h4 routerLink="/dashboard/meditation/meditation-list"> Meditation Audios </h4> <img
+              src="assets/icon/right-angle.svg" class="img-fluid">
+            <h3>Create new Meditation</h3>
+          </span>
+          <div class="card component-card_9 zindex">
+            <div class="card-body ">
+              <form action="">
+                <label>Add Meditation Details</label>
+                <div class="row">
+                  <!-- <label>Add Meditation Details</label> -->
+                  <div class="row">
+                    <div class="col-5  p-0">
+                      <label>Background Image</label>
+                      <div class="center">
+                        <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+                          (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".png">
+                          <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                            <p *ngIf="!filePresent"> <i class="fa fa-image"></i> </p>
+                            <p *ngIf="!filePresent">Add Background Image</p>
+                            <h5 *ngIf="filePresent">
+                              <h4 *ngIf="filePresent"> <i class="fa fa-image" style="color: green !important;"></i>
+                              </h4>
+
+                              <h6> {{ filePresent.name }}</h6>
+                              <!-- <p class="para"> File Type : <b> png </b></p>
                 <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
-              </h5>
-                    <a (click)="openFileSelector()" *ngIf="!filePresent">click to browse</a>
-                    </ng-template>
-                    </ngx-file-drop>
-                  </div>
-                 </div>
-                  </div>
-                 <div class="row" style="width: 60% !important; margin: 0 auto !important;">
-                  <div class="col-6">
-                    <label>Audio Name</label>
-                    <input type="text" placeholder="Enter Audio Name" class="form-control">
-                  </div>
-                  <div class="col-6">
-                    <label>Discription</label>
-                    <input type="text" placeholder="Enter Discription" class="form-control">
-                  </div>
-                  <div class="col-6">
-                    <label>Duration</label>
-                    <input type="text" placeholder="Enter Duration" class="form-control">
-                  </div>
+                            </h5>
+                            <a (click)="openFileSelector()" *ngIf="!filePresent">click to browse</a>
+                          </ng-template>
+                        </ngx-file-drop>
+                      </div>
+                    </div>
+
+                    <div class="col-7">
+                      <div class="row">
+                        <div class="col-6">
+                          <label>Audio Name</label>
+                          <input type="text" placeholder="Enter Audio Name" class="form-control">
+                        </div>
+                        <div class="col-6">
+                          <label>Discription</label>
+                          <input type="text" placeholder="Enter Discription" class="form-control">
+                        </div>
+                        <div class="col-6">
+                          <label>Duration</label>
+                          <input type="text" placeholder="Enter Duration" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+
+
                   </div>
                 </div>
                 <div class="row pt-4">
-                 <h5 class="mb-3">Selete Platform</h5>
-                 <div class="row" style="display: block;">
-                  <h6>Choose platform to add this audio</h6>
-                  <button type="button" class="btn btn-feature">Featured Section</button>
-                  <button type="button" class="btn btn-save">Category</button>
-                  <button type="button" class="btn btn-feature">Program</button>
-                 </div>
-                 <div class="row" style="padding: 1em 0;">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
-                    <label class="form-check-label" for="check1">Lorem Ispum</label>
+                  <h5 class="mb-3">Selete Platform</h5>
+                  <div class="row" style="display: block;">
+                    <h6>Choose platform to add this audio</h6>
+                    <button type="button" class="btn btn-feature">Featured Section</button>
+                    <button type="button" class="btn btn-save">Category</button>
+                    <button type="button" class="btn btn-feature">Program</button>
                   </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                    <label class="form-check-label" for="check2">Lorem Ispum</label>
+                  <div class="row" style="padding: 1em 0;">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something"
+                        checked>
+                      <label class="form-check-label" for="check1">Lorem Ispum</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                      <label class="form-check-label" for="check2">Lorem Ispum</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input">
+                      <label class="form-check-label">Lorem Ispum</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                      <label class="form-check-label" for="check1">Lorem Ispum</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                      <label class="form-check-label" for="check2">Lorem Ispum</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input">
+                      <label class="form-check-label">Lorem Ispum</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                      <label class="form-check-label" for="check1">Lorem Ispum</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                      <label class="form-check-label" for="check2">Lorem Ispum</label>
+                    </div>
+
                   </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" >
-                    <label class="form-check-label">Lorem Ispum</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >
-                    <label class="form-check-label" for="check1">Lorem Ispum</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                    <label class="form-check-label" for="check2">Lorem Ispum</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" >
-                    <label class="form-check-label">Lorem Ispum</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >
-                    <label class="form-check-label" for="check1">Lorem Ispum</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                    <label class="form-check-label" for="check2">Lorem Ispum</label>
-                  </div>
-                 
-              </div>
                 </div>
                 <div class="row">
                   <h5>Upload Audio</h5>
-                  </div>
+                </div>
                 <div class="row">
-                  
-                 <div class="col-4 pl-0">
-                  <label>Upload editation audio</label>
-                  <div class="center">
-                    <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="droppedMusic1($event)" 
-                    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".mp3">
-                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-                      <p *ngIf="!filePresentMusic1"> 
-                        <!-- <i class="fas fal-file-music"></i>  -->
-                        <img src="assets/icon/music-file.svg" class="img-fluid">
-                      </p>
-                      <p *ngIf="!filePresentMusic1">Upload Audio here</p>
-                      <h5 *ngIf="filePresentMusic1">
-                        <h4 *ngIf="filePresentMusic1"> <i class="fa fa-image" style="color: green !important;"></i> </h4>
-      
-                      <h6> {{ filePresentMusic1.name }}</h6>
-                      <!-- <p class="para"> File Type : <b> png </b></p>
+
+                  <div class="col-4 pl-0">
+                    <label>Upload editation audio</label>
+                    <div class="center">
+                      <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="droppedMusic1($event)"
+                        (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".mp3">
+                        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                          <p *ngIf="!filePresentMusic1">
+                            <!-- <i class="fas fal-file-music"></i>  -->
+                            <img src="assets/icon/music-file.svg" class="img-fluid">
+                          </p>
+                          <p *ngIf="!filePresentMusic1">Upload Audio here</p>
+                          <h5 *ngIf="filePresentMusic1">
+                            <h4 *ngIf="filePresentMusic1"> <i class="fa fa-image" style="color: green !important;"></i>
+                            </h4>
+
+                            <h6> {{ filePresentMusic1.name }}</h6>
+                            <!-- <p class="para"> File Type : <b> png </b></p>
                       <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
-                    </h5>
-                    <a (click)="openFileSelector()" *ngIf="!filePresentMusic1">click to browse</a>
-                    </ng-template>
-                    </ngx-file-drop>
+                          </h5>
+                          <a (click)="openFileSelector()" *ngIf="!filePresentMusic1">click to browse</a>
+                        </ng-template>
+                      </ngx-file-drop>
+                    </div>
                   </div>
-                 </div>
-                 <div class="col-4">
-                  <label>Upload audio file</label>
-                  <div class="center">
-                  <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="droppedMusic2($event)" 
-                    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".mp3">
-                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-                      <p *ngIf="!filePresentMusic2"> 
-                        <!-- <i class="fas fal-file-music"></i>  -->
-                        <img src="assets/icon/music-file.svg" class="img-fluid">
-                      </p>
-                      <p *ngIf="!filePresentMusic2">Upload Audio here</p>
-                      <h5 *ngIf="filePresentMusic2">
-                        <h4 *ngIf="filePresentMusic2"> <i class="fa fa-music" style="color: green !important;"></i> </h4>
-      
-                      <h6> {{ filePresentMusic2.name }}</h6>
-                      <!-- <p class="para"> File Type : <b> png </b></p>
+                  <div class="col-4">
+                    <label>Upload audio file</label>
+                    <div class="center">
+                      <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="droppedMusic2($event)"
+                        (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".mp3">
+                        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                          <p *ngIf="!filePresentMusic2">
+                            <!-- <i class="fas fal-file-music"></i>  -->
+                            <img src="assets/icon/music-file.svg" class="img-fluid">
+                          </p>
+                          <p *ngIf="!filePresentMusic2">Upload Audio here</p>
+                          <h5 *ngIf="filePresentMusic2">
+                            <h4 *ngIf="filePresentMusic2"> <i class="fa fa-music" style="color: green !important;"></i>
+                            </h4>
+
+                            <h6> {{ filePresentMusic2.name }}</h6>
+                            <!-- <p class="para"> File Type : <b> png </b></p>
                       <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
-                    </h5>
-                    <a (click)="openFileSelector()" *ngIf="!filePresentMusic2">click to browse</a>
-                    </ng-template>
-                    </ngx-file-drop>
+                          </h5>
+                          <a (click)="openFileSelector()" *ngIf="!filePresentMusic2">click to browse</a>
+                        </ng-template>
+                      </ngx-file-drop>
+                    </div>
                   </div>
-                 </div>
-                 <div class="col-4">
-                  <label>Audio Voice</label>
-                  <select class="form-select">
-                    <option>Male</option>
-                    <option>Female</option>
-                  </select>
-                 </div>
-                 
+                  <div class="col-4">
+                    <label>Audio Voice</label>
+                    <select class="form-select">
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+
                 </div>
                 <div class="row pt-4">
-                  <button type="button" class="btn btn-cancel" routerLink="/dashboard/meditation/meditation-list">Cancel</button>
+                  <button type="button" class="btn btn-cancel"
+                    routerLink="/dashboard/meditation/meditation-list">Cancel</button>
                   <button type="button" class="btn btn-save">Save</button>
                 </div>
-               
+
               </form>
-              </div>
-  
             </div>
+
           </div>
         </div>
       </div>
-    
-  
     </div>
-  
-  
-  
-  
-  
+
+
   </div>
-  
+
+
+
+
+
+</div>
