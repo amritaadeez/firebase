@@ -15,7 +15,7 @@
               <form  [formGroup]="addDocumentForm">
                 <div class="row">
                   <div class="row" >
-                    <div class="col-6 p-0">
+                    <div class="col-12 col-md-6 p-0">
                       <label>Upload Category Image</label>
                       <div class="center">
                         <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
@@ -37,7 +37,7 @@
                     </div>
                   
                   
-                    <div class="col-5">
+                    <div class="col-12 col-md-5">
                       <label>Category Name</label>
                       <input type="text" placeholder="Enter Category Name"  formControlName="title" class="form-control">
                     </div>

@@ -41,11 +41,11 @@
                       <td style="width: 10%;">
                         {{index + 1}}
                       </td>
-                      <td><img *ngIf="item.payload.doc.data().background_image" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid">
+                      <td style="width: 22%;"><img *ngIf="item.payload.doc.data().background_image" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid">
                         <img *ngIf="!item.payload.doc.data().background_image" src="assets/iot_logo.jpg" alt="" class="img-fluid"></td>
-                      <td *ngIf=" index != selectedIndex"> {{item.payload.doc.data().title}}</td>
-                      <td *ngIf=" index == selectedIndex"><input formControlName="title" class="form-control" placeholder="Enter Title"> </td>
-                      <td class="icon-td">
+                      <td *ngIf=" index != selectedIndex" style="width: 22%;"> {{item.payload.doc.data().title}}</td>
+                      <td *ngIf=" index == selectedIndex" style="width: 22%;"><input formControlName="title" class="form-control" placeholder="Enter Title"> </td>
+                      <td class="icon-td" style="width: 25%;">
                         <button mat-icon-button aria-label="Example icon button with a home icon"
                           (click)="editAction(index, item)">
                           <img src="assets/icon/edit-icon.svg" class="edit-icon">
@@ -56,7 +56,7 @@
                         </button>
                       </td>
 
-                      <td *ngIf="showAction && index == selectedIndex"><button class="btn btn-cancel" (click)="cancelAction()">
+                      <td *ngIf="showAction && index == selectedIndex" style="width: 20%;"><button class="btn btn-cancel" (click)="cancelAction()">
                           Cancel
                         </button>
                         <button class="btn btn-save" (click)="updateProgram(editDocumentForm, item)">
