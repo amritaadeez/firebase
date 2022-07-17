@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Document } from '../_model/document';
 import { AngularFirestore } from "@angular/fire/firestore";
-
+import {
+  MatSnackBar
+} from '@angular/material/snack-bar';
 @Injectable({
   providedIn: 'root'
 })
 
 export class DocumentService {
 
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore, private _snackbar: MatSnackBar) {}
 
   /* Add Document */
   AddDocument(document) {
@@ -17,7 +19,9 @@ export class DocumentService {
       this.firestore.collection("categories").add(document)
         .then(res => {
           resolve(res);
-          console.log(res)
+          this._snackbar.open("Added Successfully", "Thanks", {
+            duration: 3000
+          });
         }, err => reject(err));
     });
   }
@@ -28,7 +32,9 @@ export class DocumentService {
       this.firestore.collection("programs").add(document)
         .then(res => {
           resolve(res);
-          console.log(res)
+          this._snackbar.open("Added Successfully", "Thanks", {
+            duration: 3000
+          });
         }, err => reject(err));
     });
   }
