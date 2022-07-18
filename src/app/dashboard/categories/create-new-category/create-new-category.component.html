@@ -30,6 +30,13 @@
                               <!-- <p class="para"> File Type : <b> png </b></p>
                  <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
                             </h5>
+                            <input type="file"
+                            id="file"
+                            #userPhoto
+                            (change)="onFileSelected($event)"
+                            name="image"
+                            autocomplete="off"
+                            />
                             <a (click)="openFileSelector()" *ngIf="!filePresent">click to browse</a>
                           </ng-template>
                         </ngx-file-drop>

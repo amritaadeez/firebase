@@ -45,6 +45,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask
+} from "@angular/fire/storage";
+
 // import { NgxFileDropModule } from 'ngx-file-drop';
 
 @NgModule({
@@ -65,6 +71,11 @@ import { environment } from '../environments/environment';
     MatMenuModule,
     MatDialogModule,
     AngularFireAuthModule,
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    AngularFireStorageModule,
+  
     AngularFireModule.initializeApp(environment.firebaseConfig),
     // NgxFileDropModule
   ],
@@ -72,7 +83,8 @@ import { environment } from '../environments/environment';
   providers: [
     ApiserviceService,
     AuthenticationService,
-    AuthGuard
+    AuthGuard,
+    // {provide: StorageBucket, useValue: "your"}
   ],
   
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

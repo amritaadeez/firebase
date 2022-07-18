@@ -3,11 +3,12 @@ import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 
 import {
   MatSnackBar
 } from '@angular/material/snack-bar';
-
+import { map, finalize } from "rxjs/operators";
 import { DocumentService } from './../../../services/document.service';
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
-
+import { AngularFireStorage } from "@angular/fire/storage";
+import { Observable } from "rxjs";
 @Component({
   selector: 'app-create-new-category',
   templateUrl: './create-new-category.component.html',
@@ -16,8 +17,9 @@ import { Router } from '@angular/router';
 export class CreateNewCategoryComponent implements OnInit {
   filePresent: any;
   addDocumentForm:FormGroup;
-
-  constructor(private _snackBar: MatSnackBar,  private _documentService : DocumentService,
+  downloadURL: Observable<string>;
+  fb: string;
+  constructor(private _snackBar: MatSnackBar, private storage: AngularFireStorage, private _documentService : DocumentService,
     private router : Router) { }
 
   ngOnInit(): void {
@@ -26,6 +28,31 @@ export class CreateNewCategoryComponent implements OnInit {
       background_image: new FormControl (null),
   
     })
+  }
+
+  onFileSelected(event) {
+    var n = Date.now();
+    const file = event.target.files[0];
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, file);
+    task.snapshotChanges().pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            if (url) {
+              this.fb = url;
+            }
+            console.log(this.fb);
+            this.addDocumentForm.controls['background_image'].setValue(this.fb);
+          });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+          console.log(url);
+        }
+      });
   }
 
   public files: NgxFileDropEntry[] = [];
