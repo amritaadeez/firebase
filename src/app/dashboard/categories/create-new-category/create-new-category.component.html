@@ -24,20 +24,20 @@
                             <p *ngIf="!filePresent"> <i class="fa fa-image"></i> </p>
                             <p *ngIf="!filePresent">Add Background Image</p>
                             <h5 *ngIf="filePresent">
-                              <h4 *ngIf="filePresent"> <i class="fa fa-image" style="color: green !important;"></i>
+                              <h4 *ngIf="filePresent"> <img src={{fb}} style="height: 5em; width: 10em">
                               </h4>
                               <h6> {{ filePresent.name }}</h6>
                               <!-- <p class="para"> File Type : <b> png </b></p>
                  <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
                             </h5>
-                            <input type="file"
+                            <input *ngIf="!filePresent" type="file" style="bottom: -2em; opacity:0; cursor: pointer"
                             id="file"
                             #userPhoto
                             (change)="onFileSelected($event)"
                             name="image"
                             autocomplete="off"
                             />
-                            <a (click)="openFileSelector()" *ngIf="!filePresent">click to browse</a>
+                            <a (click)="openFileSelector()" *ngIf="!filePresent"> <a  *ngIf="!spiner"> click to browse </a> <i class="fas fa-spin fa-spinner" *ngIf="spiner"> </i> </a>
                           </ng-template>
                         </ngx-file-drop>
                       </div>

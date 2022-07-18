@@ -19,6 +19,7 @@ export class CreateNewCategoryComponent implements OnInit {
   addDocumentForm:FormGroup;
   downloadURL: Observable<string>;
   fb: string;
+  spiner:boolean = false
   constructor(private _snackBar: MatSnackBar, private storage: AngularFireStorage, private _documentService : DocumentService,
     private router : Router) { }
 
@@ -31,6 +32,7 @@ export class CreateNewCategoryComponent implements OnInit {
   }
 
   onFileSelected(event) {
+    this.spiner = true
     var n = Date.now();
     const file = event.target.files[0];
     const filePath = `RoomsImages/${n}`;
@@ -42,8 +44,12 @@ export class CreateNewCategoryComponent implements OnInit {
           this.downloadURL.subscribe(url => {
             if (url) {
               this.fb = url;
+              
             }
-            console.log(this.fb);
+            this.spiner = false
+            this.filePresent = file
+            console.log(this.fb, file.name);
+           
             this.addDocumentForm.controls['background_image'].setValue(this.fb);
           });
         })
