@@ -63,7 +63,7 @@ export class DocumentService {
     return this.firestore.collection("meditations/"+id+'/audios').valueChanges();
   }
   GetDocumentQuestionList() {
-    return this.firestore.collection("questions").valueChanges();
+    return this.firestore.collection("questions").snapshotChanges();
   }
   GetDocumentUserList() {
     return this.firestore.collection("users").snapshotChanges();

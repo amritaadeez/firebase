@@ -15,7 +15,7 @@
               <div class="card-body " >
                 <div class="row">
                  <div class="col-12 col-md-4" *ngFor="let item of documents;"> 
-                  <span>{{item.question}}</span>                 
+                 <span >{{item.payload.doc.data().question}}</span>                
                       <section class="example-section">
                         <mat-progress-bar
                             class="example-margin"
@@ -25,7 +25,21 @@
                             >
                         </mat-progress-bar>
                       </section>
-                      <label>None {{value}}%</label>
+                      <!-- <label>None {{value}}%</label> -->
+                    
+                 </div>
+                 <div class="col-12 col-md-4" *ngFor="let item of docid;"> 
+                  <span >{{item.option}}: {{item.vote_count}}</span>                 
+                      <!-- <section class="example-section">
+                        <mat-progress-bar
+                            class="example-margin"
+                            [color]="color"
+                            [mode]="mode"
+                            [value]='value'
+                            >
+                        </mat-progress-bar>
+                      </section>
+                      <label>None {{value}}%</label> -->
                     
                  </div>
                  <!-- <div class="col-4"> 

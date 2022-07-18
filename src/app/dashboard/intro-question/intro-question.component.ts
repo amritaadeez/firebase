@@ -28,12 +28,13 @@ export class IntroQuestionComponent implements OnInit {
   value2 = 52;
   bufferValue = 75;
   documents: any;
+  docid: unknown[];
   constructor( private route : ActivatedRoute,
     private _documentService : DocumentService,  private _snackBar: MatSnackBar, public dialog: MatDialog , private router: Router, private AuthenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.getDocumentList()
-    // this.playButton()
+    
   }
 
   getDocumentList = () =>
@@ -41,17 +42,22 @@ export class IntroQuestionComponent implements OnInit {
     .GetDocumentQuestionList()
     .subscribe(res => {
       this.documents = res;
-      console.log("username", this.documents)
+      this.playButton(this.documents)
+      //console.log("username", this.documents)
     });
 
-  //   playButton(){
-  //     console.log("fghjk")
-  //     this._documentService.GetintroQuesList(this.documents).subscribe(res => {
-  //       console.log("chal ja")
-  //   console.log(res)
-  //   // this.playUrl = res
- 
-  //   });
-  // }
+    playButton(item:any){
+      //console.log(item.payload.doc.data())
+        item.map((val)=>{
+         this._documentService.GetintroQuesList(val.payload.doc.id).subscribe(res => {
+          this.docid = res;
+          console.log( this.docid)
+
+  
+   
+      });
+        })
+     
+  }
 
 }
