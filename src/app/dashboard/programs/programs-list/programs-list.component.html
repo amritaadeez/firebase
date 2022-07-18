@@ -26,6 +26,7 @@
                 </div>
                 <hr>
                 <div class="table-div">
+                  <form [formGroup]="editDocumentForm" novalidate>
                   <table class="table" >
                     <thead>
                       <tr >
@@ -33,6 +34,8 @@
                         <th >Program Image</th>
                         <th >Program Name</th>
                         <th >No. of Meditations</th>
+                        <th >Action</th>
+                        <th ></th>
                         
                        
     
@@ -43,17 +46,38 @@
                         <td style="width: 10%;">
                           {{i + 1}}
                         </td>
-                        <td style="width: 20%;" (click)="changeRoute(item)"><img  *ngIf="item.payload.doc.data().background_image" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid">
+                        <td style="width: 20%;" ><img  *ngIf="item.payload.doc.data().background_image" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid">
                           <img *ngIf="!item.payload.doc.data().background_image" src="assets/iot_logo.jpg" alt="" class="img-fluid"></td>
-                        <td style="width: 20%;">{{item.payload.doc.data().title}}</td>
-                        <td style="width: 30%;">{{item.payload.doc.data().title}}</td>
+                        <!-- <td style="width: 20%;">{{item.payload.doc.data().title}}</td>
+                        <td style="width: 30%;">{{item.payload.doc.data().title}}</td> -->
+                        <td *ngIf=" i != selectedIndex" style="width: 20%;"> {{item.payload.doc.data().title}}</td>
+                      <td *ngIf=" i == selectedIndex" style="width: 20%;"><input formControlName="title" class="form-control" placeholder="Enter Title"> </td>
+                      <td *ngIf=" i != selectedIndex" style="width: 20%;"> {{item.payload.doc.data().title}}</td>
+                      <td *ngIf=" i == selectedIndex" style="width: 20%;"><input formControlName="title" class="form-control" placeholder="Enter Title"> </td>
+                        <td class="icon-td" style="width: 25%;">
+                          <button mat-icon-button aria-label="Example icon button with a home icon"
+                            (click)="editAction(i, item)">
+                            <img src="assets/icon/edit-icon.svg" class="edit-icon">
+                          </button>
+                          <button mat-icon-button aria-label="Example icon button with a home icon"
+                            (click)="openDialog(item, 'delete')">
+                            <img src="assets/icon/trash.svg">
+                          </button>
+                        </td>
+  
+                        <td *ngIf="showAction && i == selectedIndex" style="width: 20%;"><button class="btn btn-cancel" (click)="cancelAction()">
+                            Cancel
+                          </button>
+                          <button class="btn btn-save" (click)="updateProgram(editDocumentForm, item)">
+                            Save
+                          </button></td>
                         
                       </tr>
                     
                       
                     </tbody>
                   </table>
-                  
+                </form>
                 </div>
                
                 <hr>
