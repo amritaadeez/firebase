@@ -20,26 +20,33 @@
                    <div class="col-12 col-md-5 p-0">
                     <label>Upload Category Image</label>
                     <div class="center">
-                    <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
+                      <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
                       (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".png">
                       <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
                         <p *ngIf="!filePresent"> <i class="fa fa-image"></i> </p>
                         <p *ngIf="!filePresent">Add Background Image</p>
-                    <h5 *ngIf="filePresent">
-                    <h4 *ngIf="filePresent"> <i class="fa fa-image" style="color: green !important;"></i> </h4>
-  
-                  <h6> {{ filePresent.name }}</h6>
-                  <!-- <p class="para"> File Type : <b> png </b></p>
-                  <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
-                </h5>
-                      <a (click)="openFileSelector()" *ngIf="!filePresent">click to browse</a>
+                        <h5 *ngIf="filePresent">
+                          <h4 *ngIf="filePresent"> <img src={{fb}} style="height: 5em; width: 10em">
+                          </h4>
+                          <h6> {{ filePresent.name }}</h6>
+                          <!-- <p class="para"> File Type : <b> png </b></p>
+             <p class="para">File Size : <b>{{filePresent.size/100000}}MB</b> </p> -->
+                        </h5>
+                        <input *ngIf="!filePresent" type="file" style="bottom: -2em; opacity:0; cursor: pointer"
+                        id="file"
+                        #userPhoto
+                        (change)="onFileSelected($event)"
+                        name="image"
+                        autocomplete="off"
+                        />
+                        <a (click)="openFileSelector()" *ngIf="!filePresent"> <a  *ngIf="!spiner"> click to browse </a> <i class="fas fa-spin fa-spinner" *ngIf="spiner"> </i> </a>
                       </ng-template>
-                      </ngx-file-drop>
+                    </ngx-file-drop>
                     </div>
                    </div>
                    
                     <div class="col-12 col-md-5">
-                      <label>Category Name</label>
+                      <label>Program Name</label>
                       <input type="text"  formControlName="title" placeholder="Enter Category Name" class="form-control">
                     </div>
                     
@@ -48,7 +55,7 @@
                  
                   <div class="mt-5">
                     <button type="button" class="btn btn-cancel" routerLink="/dashboard/categories">Back</button>
-                    <button type="button" class="btn btn-save" (click)="submitDocument(addDocumentForm)">Add Category</button>
+                    <button type="button" class="btn btn-save" (click)="submitDocument(addDocumentForm)">Add Program</button>
                   </div>
                  
                 </form>

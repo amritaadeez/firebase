@@ -81,17 +81,21 @@ export class MainDashboardComponent implements OnInit {
   }
 
 
-  openDialog(datas: any) {
-   let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      data: {
-       items: datas
-      },
-    });
+  openDialog(item: any, text: any) {
 
+    let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+       data: {
+        items: item,
+        text: text
+       },
+     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
       if (result.event == "Proceed") {
       this._documentService.DeleteUser(result.data.items);
+      this._snackbar.open("Deleted Successfully", "Thanks", {
+        duration: 3000
+      });
       } else {
 
       }
