@@ -41,8 +41,21 @@
                       <td style="width: 10%;">
                         {{index + 1}}
                       </td>
-                      <td style="width: 22%;"><img *ngIf="item.payload.doc.data().background_image" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid">
-                        <img *ngIf="!item.payload.doc.data().background_image" src="assets/iot_logo.jpg" alt="" class="img-fluid"></td>
+                      <td style="width: 22%" *ngIf=" index != selectedIndex" >
+                        <img *ngIf="item.payload.doc.data().background_image" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid">
+                        <img *ngIf="!item.payload.doc.data().background_image" src="assets/iot_logo.jpg" alt="" class="img-fluid">
+                      </td>
+                      <td style="width: 22%; position: relative;" class="edit-image" *ngIf=" index == selectedIndex" >
+                        <img *ngIf="item.payload.doc.data().background_image && !filePresent" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid edit-mode">
+                        <img *ngIf="filePresent" src={{fb}} alt="" class="img-fluid edit-mode">
+                       <input type="file" class="image-upload"  id="file"
+                       #userPhoto
+                       (change)="onFileSelected($event)"
+                       name="image"
+                       autocomplete="off">
+                       <a class="text-upload text-hover" *ngIf="!spiner"> click to change </a>
+                       <a class="text-upload" *ngIf="spiner"><i class="fas fa-spin fa-spinner"></i> </a>
+                      </td>
                       <td *ngIf=" index != selectedIndex" style="width: 22%;"> {{item.payload.doc.data().title}}</td>
                       <td *ngIf=" index == selectedIndex" style="width: 22%;"><input formControlName="title" class="form-control" placeholder="Enter Title"> </td>
                       <td class="icon-td" style="width: 25%;">

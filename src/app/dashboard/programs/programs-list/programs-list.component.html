@@ -54,7 +54,7 @@
                       <td *ngIf=" i == selectedIndex" style="width: 20%;"><input formControlName="title" class="form-control" placeholder="Enter Title"> </td>
                       <td *ngIf=" i != selectedIndex" style="width: 20%;"> {{item.payload.doc.data().title}}</td>
                       <td *ngIf=" i == selectedIndex" style="width: 20%;"><input formControlName="title" class="form-control" placeholder="Enter Title"> </td>
-                        <td class="icon-td" style="width: 25%;">
+                        <td  style="width: 25%;">
                           <button mat-icon-button aria-label="Example icon button with a home icon"
                             (click)="editAction(i, item)">
                             <img src="assets/icon/edit-icon.svg" class="edit-icon">
@@ -65,7 +65,7 @@
                           </button>
                         </td>
   
-                        <td *ngIf="showAction && i == selectedIndex" style="width: 20%;"><button class="btn btn-cancel" (click)="cancelAction()">
+                        <td class="icon-td" *ngIf="showAction && i == selectedIndex" ><button class="btn btn-cancel" (click)="cancelAction()">
                             Cancel
                           </button>
                           <button class="btn btn-save" (click)="updateProgram(editDocumentForm, item)">

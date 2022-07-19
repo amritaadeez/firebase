@@ -14,10 +14,12 @@ import {
 } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
-
+import { AngularFireStorage } from "@angular/fire/storage";
+import { Observable } from "rxjs";
 import {
   AuthenticationService
 } from 'src/app/auth.service';
+import { map, finalize } from "rxjs/operators";
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
 import { DocumentService } from './../../../services/document.service';
 @Component({
@@ -26,7 +28,11 @@ import { DocumentService } from './../../../services/document.service';
   styleUrls: ['./categories-list.component.scss']
 })
 export class CategoriesListComponent implements OnInit {
-
+  filePresent: any;
+  addDocumentForm:FormGroup;
+  downloadURL: Observable<string>;
+  fb: string;
+  spiner:boolean = false
 
 p: number = 1;
   showAction: boolean;
@@ -36,7 +42,7 @@ p: number = 1;
   selectedIndex: any
   editDocumentForm:FormGroup;
 
-  constructor(  private _snackBar: MatSnackBar, private _documentService : DocumentService, public dialog: MatDialog, private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {
+  constructor(  private _snackBar: MatSnackBar, private storage: AngularFireStorage, private _documentService : DocumentService, public dialog: MatDialog, private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {
     this.editDocumentForm = new FormGroup ({
       title: new FormControl (null, [Validators.required, Validators.maxLength(200)]),
       background_image: new FormControl (null),
@@ -45,7 +51,7 @@ p: number = 1;
   }
 
   ngOnInit(): void {
-
+   
     this.getDocumentList();
   }
 
@@ -66,6 +72,36 @@ p: number = 1;
        }
      });
    }
+
+   onFileSelected(event) {
+    this.spiner = true
+    var n = Date.now();
+    const file = event.target.files[0];
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, file);
+    task.snapshotChanges().pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            if (url) {
+              this.fb = url;
+              
+            }
+            this.spiner = false
+            this.filePresent = file
+            console.log(this.fb, file.name);
+           
+            this.editDocumentForm.controls['background_image'].setValue(this.fb);
+          });
+        })
+      )
+      .subscribe(url => {
+        if (url) {
+          console.log(url);
+        }
+      });
+  }
 
   getDocumentList = () =>
   this._documentService
@@ -98,7 +134,7 @@ p: number = 1;
     this.selectedIndex = index
     console.log(this.selectedIndex)
     this.editDocumentForm.controls['title'].setValue(data.payload.doc.data().title);
-      this.editDocumentForm.controls['background_image'].setValue(data.payload.doc.data().background_image);
+    this.editDocumentForm.controls['background_image'].setValue(data.payload.doc.data().background_image);
     this.showAction = true
   }
   cancelAction(){
