@@ -17,6 +17,8 @@ import {
 } from 'src/app/auth.service';
 import { DocumentService } from './../../../services/document.service';
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
+import {MatDialog} from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-programs-list',
@@ -35,7 +37,7 @@ selectedIndex: any
 
 documents: any;
 id: any;
-constructor( private _documentService : DocumentService,private _snackbar: MatSnackBar, private router: Router, private AuthenticationService: AuthenticationService) {
+constructor( private _documentService : DocumentService,  private _snackBar: MatSnackBar, public dialog: MatDialog , private router: Router, private AuthenticationService: AuthenticationService) {
   this.editDocumentForm = new FormGroup ({
     title: new FormControl (null, [Validators.required, Validators.maxLength(200)]),
     background_image: new FormControl (null),
@@ -69,7 +71,7 @@ this._documentService
         res => {
           this.selectedIndex = null
             this.showAction = false
-          this._snackbar.open("Updated Successfully", "Thanks", {
+          this._snackBar.open("Updated Successfully", "Thanks", {
             duration: 3000
           });
           this.router.navigate(['/dashboard/programs'])
@@ -77,6 +79,30 @@ this._documentService
       )
     
   }
+
+    
+  openDialog(item: any, text: any) {
+
+    let dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+       data: {
+        items: item,
+        text: text
+       },
+     });
+ 
+     dialogRef.afterClosed().subscribe(result => {
+       console.log('The dialog was closed', result);
+       if (result.event == "Proceed") {
+       this._documentService.DeleteProgram(result.data.items);
+       this._snackBar.open("Deleted Successfully", "Thanks", {
+        duration: 3000
+      });
+       } else {
+ 
+       }
+     });
+   }
+
 
   deleteDocument = data => this._documentService.DeleteDocument(data);
 
