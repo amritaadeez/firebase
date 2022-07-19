@@ -28,7 +28,8 @@
                       <!-- <label>None {{value}}%</label> -->
                     
                  </div>
-                 <div class="col-12 col-md-4" *ngFor="let item of docid;"> 
+                 <div class="col-12 col-md-4" *ngFor="let items of docid;"> 
+                 <div *ngFor="let item of items;"> 
                   <span >{{item.option}}: {{item.vote_count}}</span>                 
                       <!-- <section class="example-section">
                         <mat-progress-bar
@@ -41,6 +42,7 @@
                       </section>
                       <label>None {{value}}%</label> -->
                     
+                 </div>
                  </div>
                  <!-- <div class="col-4"> 
                   <span>What do you need most right now?</span>

@@ -29,6 +29,7 @@ export class IntroQuestionComponent implements OnInit {
   bufferValue = 75;
   documents: any;
   docid: unknown[];
+  array = []
   constructor( private route : ActivatedRoute,
     private _documentService : DocumentService,  private _snackBar: MatSnackBar, public dialog: MatDialog , private router: Router, private AuthenticationService: AuthenticationService) { }
 
@@ -47,11 +48,16 @@ export class IntroQuestionComponent implements OnInit {
     });
 
     playButton(item:any){
-      //console.log(item.payload.doc.data())
+this.array = []
         item.map((val)=>{
+          console.log(val.payload.doc.id)
          this._documentService.GetintroQuesList(val.payload.doc.id).subscribe(res => {
           this.docid = res;
-          console.log( this.docid)
+          this.array.push(res)
+
+          console.log( this.array)
+
+          this.docid = this.array
 
   
    
