@@ -46,6 +46,7 @@
                         <img *ngIf="!item.payload.doc.data().background_image" src="assets/iot_logo.jpg" alt="" class="img-fluid">
                       </td>
                       <td style="width: 22%; position: relative;" class="edit-image" *ngIf=" index == selectedIndex" >
+                        <img *ngIf="!item.payload.doc.data().background_image && !filePresent"  src="assets/iot_logo.jpg"  alt="" class="img-fluid edit-mode">
                         <img *ngIf="item.payload.doc.data().background_image && !filePresent" src={{item.payload.doc.data().background_image}} alt="" class="img-fluid edit-mode">
                         <img *ngIf="filePresent" src={{fb}} alt="" class="img-fluid edit-mode">
                        <input type="file" class="image-upload"  id="file"

@@ -67,6 +67,7 @@ p: number = 1;
        console.log('The dialog was closed', result);
        if (result.event == "Proceed") {
        this._documentService.DeleteCategory(result.data.items);
+       this.selectedIndex = null
        } else {
  
        }
